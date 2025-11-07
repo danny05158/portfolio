@@ -589,68 +589,6 @@
                             "level": "流利"
                         }
                     }
-                },
-
-                {
-                    "id": 3,
-                    "dateStart": null,
-                    "img": "images/flags/vi.png",
-                    "fallbackFaIcon": null,
-                    "fallbackFaIconColor": null,
-                    "percentage": null,
-                    "locales": {
-                        "en": {
-                            "title": "Vietnamese",
-                            "description": "Intermediate proficiency in Vietnamese language; can hold conversations and understand written text.",
-                            "level": "Intermediate"
-                        },
-                        "es": {
-                            "title": "Vietnamita",
-                            "description": "Competencia intermedia en el idioma vietnamita; puede mantener conversaciones y comprender texto escrito.",
-                            "level": "Intermedio"
-                        },
-                        "fr": {
-                            "title": "Vietnamien",
-                            "description": "Compétence intermédiaire en vietnamien ; peut tenir des conversations et comprendre un texte écrit.",
-                            "level": "Intermédiaire"
-                        },
-                        "zh": {
-                            "title": "越南语",
-                            "description": "具有中等水平的越南语能力；能进行对话并理解书面文字。",
-                            "level": "中级"
-                        }
-                    }
-                },
-
-                {
-                    "id": 4,
-                    "dateStart": null,
-                    "img": "images/flags/pt-br.png",
-                    "fallbackFaIcon": null,
-                    "fallbackFaIconColor": null,
-                    "percentage": null,
-                    "locales": {
-                        "en": {
-                            "title": "Brazilian Portuguese",
-                            "description": "Basic understanding of Brazilian Portuguese; learning and improving.",
-                            "level": "Beginner"
-                        },
-                        "es": {
-                            "title": "Portugués Brasileño",
-                            "description": "Comprensión básica del portugués brasileño; aprendiendo y mejorando.",
-                            "level": "Principiante"
-                        },
-                        "fr": {
-                            "title": "Portugais Brésilien",
-                            "description": "Compréhension de base du portugais brésilien ; en cours d'apprentissage et d'amélioration.",
-                            "level": "Débutant"
-                        },
-                        "zh": {
-                            "title": "巴西葡萄牙语",
-                            "description": "对巴西葡萄牙语有基本的理解；正在学习和改进。",
-                            "level": "初学者"
-                        }
-                    }
                 }
             ]
         }
