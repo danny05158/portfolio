@@ -18,8 +18,8 @@ Here's a list of live versions of the template:
 
 | #     | Version                | Description                                              | URL                                                                  |
 |-------|------------------------|----------------------------------------------------------|----------------------------------------------------------------------|
-| 🟣    | Roy Sheppard (default) | Latest deployment of the template here on GitHub pages.  | [Preview](https://ryanbalieiro.github.io/vue-resume-template/)       | 
-| 🟢    | Alana Richard          | An example of how the template can be customized.        | [Preview](https://ryansandbox.github.io/alana-richard-vue-resume/)   |  
+| 🟣    | Roy Sheppard (default) | Latest deployment of the template here on GitHub pages.  | [Preview](https://ryanbalieiro.github.io/vue-resume-template/)       |
+| 🟢    | Alana Richard          | An example of how the template can be customized.        | [Preview](https://ryansandbox.github.io/alana-richard-vue-resume/)   |
 | 🔵    | Gabriel Becker         | Another example of how the template can be customized.   | [Preview](https://ryansandbox.github.io/gabriel-becker-vue-resume/)  |
 
 ## Layout and concept
@@ -80,7 +80,7 @@ Watch this step-by-step video tutorial to see exactly how to configure your resu
 | 9   | ArticleThreads and ArticleContactOptions | [Watch on YouTube](https://www.youtube.com/watch?v=QvQQK81xljw&t=25m36s) |
 | 10  | ArticleContactForm                       | [Watch on YouTube](https://www.youtube.com/watch?v=QvQQK81xljw&t=29m44s) |
 | 11  | Deploying on GitHub Pages                | [Watch on YouTube](https://www.youtube.com/watch?v=QvQQK81xljw&t=34m05s) |
-| 12  | Extra deployment instructions            | [Watch on YouTube](https://www.youtube.com/watch?v=QvQQK81xljw&t=36m20s) |   
+| 12  | Extra deployment instructions            | [Watch on YouTube](https://www.youtube.com/watch?v=QvQQK81xljw&t=36m20s) |
 
 For step-by-step setup and deployment instructions, you can also check out the following docs:
 - [CONFIGURATION.md](./docs/CONFIGURATION.md) – learn how to configure and customize the project.
