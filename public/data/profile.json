@@ -4,8 +4,8 @@
 
     "locales": {
         "en": {
-            "credits": "Daniel Casasola",
-            "role": "Frontend Engineer"
+            "credits": " ",
+            "role": "Software Engineer"
         }
     },
 
@@ -16,7 +16,7 @@
             "href": null,
             "locales": {
                 "en": {
-                    "value": "South Elgin, IL 60177",
+                    "value": "IL 60177",
                     "valueShort": "IL"
                 }
             }
