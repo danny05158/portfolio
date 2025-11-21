@@ -12,10 +12,10 @@ jobs:
     permissions:
       # This is the critical line that grants write access to Pages
       pages: write
-      
+
       # This is also required for the deploy-pages action
-      id-token: write 
-      
+      id-token: write
+
       # Recommended to also include 'contents: read' for checkout
       contents: read
 
@@ -38,9 +38,9 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # Deploy to GitHub pages
-      - name: Deploy to GitHub pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist
+      # # Deploy to GitHub pages
+      # - name: Deploy to GitHub pages
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: dist
