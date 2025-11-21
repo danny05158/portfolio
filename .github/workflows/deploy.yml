@@ -6,16 +6,19 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write # This grants permission to write files/contents back to the repository.
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     permissions:
       # This is the critical line that grants write access to Pages
       pages: write
-      
+
       # This is also required for the deploy-pages action
-      id-token: write 
-      
+      id-token: write
+
       # Recommended to also include 'contents: read' for checkout
       contents: read
 
