@@ -7,7 +7,8 @@ export default defineConfig({
     server:{
       watch: {
         usePolling: true
-      }
+      },
+      host: 'localhost'
     },
     plugins: [vue()],
     css: {

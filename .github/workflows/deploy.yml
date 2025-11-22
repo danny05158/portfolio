@@ -41,24 +41,32 @@ jobs:
           npm ci
           npm run build
 
-      # Deploy to GitHub pages
-      - name: Deploy to GitHub pages
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}   # make sure this secret exists in repo settings
-        run: |
-          PUBLISH_DIR=dist
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./dist
 
-          # configure git
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
 
-          # prepare a new repo in the publish directory
-          cd "$PUBLISH_DIR"
-          git init
-          git add -A
-          git commit -m "Deploy from GitHub Actions" || echo "No changes to commit"
+      # # Deploy to GitHub pages
+      # - name: Deploy to GitHub pages
+      #   env:
+      #     GH_PAT: ${{ secrets.GH_PAT }}   # make sure this secret exists in repo settings
+      #   run: |
+      #     PUBLISH_DIR=dist
 
-          # set branch and push using the PAT (force to overwrite gh-pages)
-          git branch -M gh-pages
-          git remote add origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}.git
-          git push -f origin gh-pages
+      #     # configure git
+      #     git config --global user.name "github-actions[bot]"
+      #     git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      #     # prepare a new repo in the publish directory
+      #     cd "$PUBLISH_DIR"
+      #     git init
+      #     git add -A
+      #     git commit -m "Deploy from GitHub Actions" || echo "No changes to commit"
+
+      #     # set branch and push using the PAT (force to overwrite gh-pages)
+      #     git branch -M gh-pages
+      #     git remote add origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}.git
+      #     git push -f origin gh-pages
