@@ -8,8 +8,8 @@
             "type": "centered",
             "locales": {
                 "en": {
-                    "title": "Welcome,",
-                    "title_short": "Welcome,",
+                    "title": "Hello, I am Daniel. I am a software enginner.",
+                    "title_short": "Hello, I am Daniel. I am a software enginner.",
                     "description": null,
                     "nav_label": "About"
                 }
@@ -39,10 +39,10 @@
             "type": "column",
             "locales": {
                 "en": {
-                    "title": "*Skills*",
+                    "title": "*Tech*",
                     "title_short": null,
                     "description": " ",
-                    "nav_label": "Skills"
+                    "nav_label": "Tech"
                 }
             }
         }

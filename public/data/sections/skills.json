@@ -23,50 +23,82 @@
                     "locales": {
                         "en": {
                             "title": "Responsive Layouts",
-                            "description": "Proficient in crafting adaptable layouts for diverse devices, ensuring optimal user experience.",
+                            "description": "Craft adaptable layouts using CSS, Flexbox and web developer tools.",
                             "level": null
                         }
                     }
                 },
-                {
-                    "id": 4,
-                    "dateStart": null,
-                    "img": null,
-                    "fallbackFaIcon": "fa-solid fa-check-double",
-                    "fallbackFaIconColor": null,
-                    "percentage": null,
-                    "locales": {
-                        "en": {
-                            "title": "Testing",
-                            "description": "Maintaining a commitment to code quality and consistently writing unit tests using the Jest framework.",
-                            "level": null
-                        }
-                    }
-                },
-
                 {
                     "id": 5,
                     "dateStart": null,
                     "img": null,
-                    "fallbackFaIcon": "fa-solid fa-expand-arrows-alt",
+                    "fallbackFaIcon": "fa-solid fa-brands fa-figma",
                     "fallbackFaIconColor": null,
                     "percentage": null,
                     "locales": {
                         "en": {
                             "title": "Interaction Design",
-                            "description": "Proficient in creating intuitive and seamless interactions for user-friendly experiences, harmonizing aesthetics and usability.",
+                            "description": "Translate wireframes into user-friendly experiences.",
                             "level": null
                         }
                     }
                 }
             ]
         },
-
+        {
+            "id": 1,
+            "component": "ArticleSkills",
+            "locales": {
+                "en": {
+                    "title": "Tools"
+                }
+            },
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc",
+                "max_items_per_line": 2,
+                "transparent_item_icon_background": false,
+                "small_icons": false,
+                "chart": null
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "dateStart": null,
+                    "img": null,
+                    "fallbackFaIcon": "fa-solid fa-code-branch",
+                    "fallbackFaIconColor": null,
+                    "percentage": null,
+                    "locales": {
+                        "en": {
+                            "title": "GIT",
+                            "description": "Use version control for as a collaborative development tool.",
+                            "level": null
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "dateStart": null,
+                    "img": null,
+                    "fallbackFaIcon": "fa-solid fa-laptop-code",
+                    "fallbackFaIconColor": null,
+                    "percentage": null,
+                    "locales": {
+                        "en": {
+                            "title": "Jest",
+                            "description": "Maintain a commitment to code quality by writing unit tests using the Jest framework.",
+                            "level": null
+                        }
+                    }
+                }
+            ]
+        },
         {
             "id": 2,
             "component": "ArticleSkills",
             "locales": {
-                "en": {"title": "Frontend Stack"}
+                "en": {"title": "Frontend"}
             },
             "settings": {
                 "order_items_by": " ",
@@ -87,7 +119,7 @@
                     "locales": {
                         "en": {
                             "title": "HTML",
-                            "description": "Experienced with HTML5 elements and features."
+                            "description": ""
                         }
                     }
                 },
@@ -102,7 +134,7 @@
                     "locales": {
                         "en": {
                             "title": "CSS",
-                            "description": "Skilled in advanced CSS3 techniques like flexbox."
+                            "description": ""
                         }
                     }
                 },
@@ -117,7 +149,7 @@
                     "locales": {
                         "en": {
                             "title": "Javascript",
-                            "description": "Skilled in JavaScript for dynamic, interactive web applications."
+                            "description": ""
                         }
                     }
                 },
@@ -147,7 +179,7 @@
                     "locales": {
                         "en": {
                             "title": "Vue",
-                            "description": "Building and deploying Vue applications."
+                            "description": ""
                         }
                     }
                 },
@@ -162,7 +194,7 @@
                     "locales": {
                         "en": {
                             "title": "React",
-                            "description": "Building interactive UIs with React, using hooks and component-based architecture."
+                            "description": ""
                         }
                     }
                 }
