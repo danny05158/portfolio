@@ -12,27 +12,10 @@
             },
             "items": [
                 {
-                    "id": 1,
-                    "locales": {
-                        "en": {
-                            "description": "A passionate web app developer."
-                        }
-                    }
-                },
-
-                {
                     "id": 2,
                     "locales": {
                         "en": {
-                            "description": "I've have been a software engineer for over <strong>5 years</strong>, building things for the web and utilizing modern web tech."
-                        }
-                    }
-                },
-                {
-                    "id": 3,
-                    "locales": {
-                        "en": {
-                            "description": "🚧 work in progress 🚧"
+                            "description": "I love building things for the web and utilizing modern tech along the way. Firm believer in the philosophy of life-long learning."
                         }
                     }
                 }
