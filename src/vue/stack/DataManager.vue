@@ -75,6 +75,7 @@ const _parseSectionsAndCategories = (sectionsList, categoriesList) => {
     }
 
     sections.value = parsedSections
+    console.log('a', sections.value)
     categories.value = parsedCategories.filter(category => category.sections.length)
 }
 

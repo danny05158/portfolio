@@ -23,6 +23,3 @@ import ModalManager from "/src/vue/stack/ModalManager.vue"
 import WindowObserver from "/src/vue/stack/WindowObserver.vue"
 import Resume from "/src/vue/stack/Resume.vue"
 </script>
-
-<style lang="scss" scoped>
-</style>

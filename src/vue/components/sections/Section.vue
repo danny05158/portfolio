@@ -40,6 +40,7 @@ const props = defineProps({
     presentationMode: String,
     active: Boolean
 })
+console.log('**', props.model)
 
 const visible = computed(() => {
     if(!props.presentationMode || props.presentationMode === constants.PresentationModes.NONE)
