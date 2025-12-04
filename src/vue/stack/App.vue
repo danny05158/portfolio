@@ -15,7 +15,6 @@
 
 <script setup>
 import { computed } from "vue"
-import DataManager from "/src/vue/stack/DataManager.vue"
 import LanguageManager from "/src/vue/stack/LanguageManager.vue"
 import FeedbacksManager from "/src/vue/stack/FeedbacksManager.vue"
 import LocationManager from "/src/vue/stack/LocationManager.vue"
