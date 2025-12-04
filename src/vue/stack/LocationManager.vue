@@ -6,15 +6,14 @@
 import {inject, onMounted, provide, ref, watch} from "vue"
 import {useScheduler} from "/src/composables/scheduler.js"
 import {useConstants} from "/src/composables/constants.js"
+import { useDataManagerStore } from "../../stores/DataManager"
 
+const dataManagerStore = useDataManagerStore()
 const constants = useConstants()
 const scheduler = useScheduler()
 
-/** @type {{value: Section[]}} */
-const sections = inject("sections")
-
 /** @type {{value: Boolean}} */
-const didLoadAllJsonFiles = inject("didLoadAllJsonFiles")
+// const didLoadAllJsonFiles = inject("didLoadAllJsonFiles")
 
 /** @type {{value: String}} */
 const windowHash = inject("windowHash")
@@ -34,7 +33,7 @@ const presentationMode = ref(constants.PresentationModes.NONE)
 const shouldResetScroll = ref(false)
 
 onMounted(() => _init())
-watch(() => didLoadAllJsonFiles.value, () => _init())
+watch(() => dataManagerStore.didLoadAllJsonFiles, () => _init())
 watch(() => windowHash.value, () => _onHashChanged())
 watch(() => isDesktopLayout.value, () => _onViewportChanged(true))
 
@@ -78,13 +77,13 @@ const scrollToTopOfCurrentSection = () => {
 }
 
 const _onHashChanged = () => {
-    if(!didLoadAllJsonFiles.value)
+    if(!dataManagerStore.didLoadAllJsonFiles)
         return
 
     const hash = window.location.hash.replace('#', '')
-    const targetSection = sections.value.find((section) => section.urlHashId === hash)
+    const targetSection = dataManagerStore.sections.find((section) => section.urlHashId === hash)
     if(!targetSection) {
-        navigateToSection(sections.value[0])
+        navigateToSection(dataManagerStore.sections[0])
         return
     }
 

@@ -50,6 +50,9 @@ import {computed, inject} from "vue"
 import Dropdown from 'bootstrap/js/src/dropdown'
 import {useUtils} from "/src/composables/utils.js"
 import {useConstants} from "/src/composables/constants.js"
+import { useDataManagerStore } from "../../../stores/DataManager"
+
+const dataManagerStore = useDataManagerStore()
 
 const constants = useConstants()
 const utils = useUtils()
@@ -57,12 +60,6 @@ const utils = useUtils()
 const props = defineProps({
     shrink: Boolean
 })
-
-/** @type {{value:Settings}} */
-const settings = inject("settings")
-
-/** @type {{value:Locales}} */
-const strings = inject("strings")
 
 /** @type {{value:Language}} */
 const selectedLanguage = inject("selectedLanguage")
@@ -78,6 +75,14 @@ const setSpinnerEnabled = inject("setSpinnerEnabled")
 
 /** @type {{value: Boolean}} */
 const isMobileLayout = inject("isMobileLayout")
+
+const settings = computed(() => {
+    return dataManagerStore.settings
+})
+
+const strings = computed(() => {
+    return dataManagerStore.strings
+})
 
 const supportsMultipleLanguages = computed(() => {
     return settings.value.supportedLanguages.length >= 2
@@ -98,7 +103,7 @@ const _onLanguageSelected = (language) => {
         setSelectedLanguageWithId(language.id)
         return
     }
-    
+
     setSpinnerEnabled(true, strings.value.getTranslation("changing_language", language, language))
     setTimeout(() => {
         setSelectedLanguageWithId(language.id)

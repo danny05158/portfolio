@@ -3,15 +3,12 @@
 </template>
 
 <script setup>
-import {inject, onMounted, provide, ref} from "vue"
+import {onMounted, provide, ref, computed} from "vue"
+import { useDataManagerStore } from "../../stores/DataManager"
 
-/** @type {{value:Settings}} */
-const settings = inject("settings")
+const dataManagerStore = useDataManagerStore()
 
-/** @type {{value:Locales}} */
-const strings = inject("strings")
-
-const supportedLanguages = settings.value.supportedLanguages
+const supportedLanguages = dataManagerStore.settings.supportedLanguages
 const defaultLanguage = ref(null)
 const selectedLanguage = ref(null)
 const localStorageId = "language-manager"
@@ -31,6 +28,10 @@ onMounted(() => {
         supportedLanguages[0]
 
     setSelectedLanguageWithId(selectedLanguage.value.id)
+})
+
+const strings = computed(() => {
+    return dataManagerStore.strings
 })
 
 const setSelectedLanguageWithId = (languageId) => {

@@ -4,11 +4,11 @@
 <script setup>
 import {computed, inject, onMounted, ref, watch} from "vue"
 import {useScheduler} from "/src/composables/scheduler.js"
+import { useDataManagerStore } from "../../../../stores/DataManager"
+
+const dataManagerStore = useDataManagerStore()
 
 const scheduler = useScheduler()
-
-/** @type {{value: Category[]}} */
-const sections = inject("sections")
 
 /** @type {{value: Section}} */
 const currentSection = inject("currentSection")
@@ -66,14 +66,14 @@ const pillsControllerOptions = computed(() => {
 })
 
 const tabControllerOptions = computed(() =>
-    sections.value?.map(section => ({
+    dataManagerStore.sections?.map(section => ({
         active: spyScrollSection.value && spyScrollSection.value.id === section.id,
         model: section
     })) || []
 )
 
 const _init = () => {
-    const initialSection = currentSection.value || sections.value[0]
+    const initialSection = currentSection.value || dataManagerStore.sections[0]
     _forceScrollToSection(initialSection, true)
     didInitialize.value = true
     _spyScroll()
@@ -115,7 +115,7 @@ const _spyScroll = () => {
     let newTargetSection = null
     let lowestOffset = null
 
-    for(const section of sections.value) {
+    for(const section of dataManagerStore.sections) {
         const el = document.getElementById(section.htmlId)
         const bounds = el?.getBoundingClientRect()
         const distanceFromZero = Math.abs(bounds?.y)

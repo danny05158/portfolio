@@ -9,6 +9,9 @@
 import {computed, inject} from "vue"
 import Article from "/src/vue/components/articles/base/Article.vue"
 import OptionsList from "/src/vue/components/widgets/OptionsList.vue"
+import { useDataManagerStore } from "../../../../stores/DataManager"
+
+const dataManagerStore = useDataManagerStore()
 
 const props = defineProps({
     /** @type {Article} **/
@@ -17,9 +20,6 @@ const props = defineProps({
         required: true
     }
 })
-
-/** @type {{value:Profile}} */
-const profile = inject("profile")
 
 /** @type {Function} */
 const localize = inject("localize")
@@ -30,7 +30,7 @@ const localizeFromStrings = inject("localizeFromStrings")
 const contactLinks = computed(() => {
     const contactIds = props.model.getSetting("contact_ids", [])
     return contactIds.map(contactId => {
-        return profile.value.getContactOptionWithId(contactId)
+        return dataManagerStore.profile.getContactOptionWithId(contactId)
     }).filter(contact => Boolean(contact)).map(item => {
         return {
             faIcon: item.faIcon.replace('regular', 'solid'),

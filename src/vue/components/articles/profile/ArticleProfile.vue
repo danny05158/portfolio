@@ -24,9 +24,9 @@ import Article from "/src/vue/components/articles/base/Article.vue"
 import ArticleProfileItem from "/src/vue/components/articles/profile/ArticleProfileItem.vue"
 import SocialLinks from "/src/vue/components/widgets/SocialLinks.vue"
 import InlineLinkList from "/src/vue/components/widgets/InlineLinkList.vue"
-import {useUtils} from "/src/composables/utils.js"
+import { useDataManagerStore } from "../../../../stores/DataManager"
 
-const utils = useUtils()
+const dataManagerStore = useDataManagerStore()
 
 const props = defineProps({
     model: {
@@ -38,9 +38,6 @@ const props = defineProps({
 
 /** @type {Function} */
 const localize = inject("localize")
-
-/** @type {{value:Profile}} */
-const profile = inject("profile")
 
 /** @type {{value:Boolean}} */
 const isScreenXlOrLarger = inject("isScreenXlOrLarger")
@@ -55,14 +52,14 @@ const title = computed(() => {
 const InlineLinkListLinks = computed(() => {
     const contactIds = props.model.getSetting("contact_list_ids", [])
     return contactIds.map(contactId => {
-        return profile.value.getContactOptionWithId(contactId)
+        return dataManagerStore.profile.getContactOptionWithId(contactId)
     }).filter(contact => Boolean(contact))
 })
 
 const socialLinks = computed(() => {
     const contactIds = props.model.getSetting("contact_circles_ids", [])
     return contactIds.map(contactId => {
-        return profile.value.getContactOptionWithId(contactId)
+        return dataManagerStore.profile.getContactOptionWithId(contactId)
     }).filter(contact => Boolean(contact))
 })
 </script>

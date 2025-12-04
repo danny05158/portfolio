@@ -22,11 +22,15 @@
 </template>
 
 <script setup>
-import {inject, watch} from "vue"
+import {inject, watch, computed} from "vue"
 import NavProfileCard from "/src/vue/components/navigation/layout/NavProfileCard.vue"
 import NavSidebarLinkList from "/src/vue/components/navigation/sidebar/NavSidebarLinkList.vue"
 import NavSidebarFooter from "/src/vue/components/navigation/sidebar/NavSidebarFooter.vue"
 import {useUtils} from "/src/composables/utils.js"
+
+import { useDataManagerStore } from "../../../../stores/DataManager"
+
+const dataManagerStore = useDataManagerStore()
 
 const utils = useUtils()
 
@@ -37,23 +41,26 @@ const props = defineProps({
 
 const emit = defineEmits(['toggle', 'select'])
 
-/** @type {{value: Profile}} */
-const profile = inject("profile")
-
-/** @type {{value:Settings}} */
-const settings = inject("settings")
-
-/** @type {{value: Section[]}} */
-const sections = inject("sections")
-
 /** @type {Function} */
 const localize = inject("localize")
 
 /** @type {{value: Object}} */
 const lastKeyPressed = inject("lastKeyPressed")
 
+const profile = computed(() => {
+    return dataManagerStore.profile
+})
+
+const sections = computed(() => {
+    return dataManagerStore.sections
+})
+
+const settings = computed(() => {
+    return dataManagerStore.settings
+})
+
 watch(() => lastKeyPressed.value, () => {
-    if(!settings.value.navToggleEnabled)
+    if(!settings.navToggleEnabled)
         return
 
     if(lastKeyPressed.value.id === "ArrowLeft")
