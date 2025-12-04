@@ -26,7 +26,7 @@
             "id": "showcase",
             "faIcon": "fa-regular fa-folder-open",
             "locales": {
-                "en": {"nav_label": "Showcase"},
+                "en": {"nav_label": "Tech"},
                 "es": {"nav_label": "Vitrina"},
                 "fr": {"nav_label": "Vitrine"},
                 "zh": {"nav_label": "展示"}

@@ -8,8 +8,8 @@
             "type": "centered",
             "locales": {
                 "en": {
-                    "title": "Welcome,",
-                    "title_short": "Welcome,",
+                    "title": "Hello, I am Daniel. I am a software enginner.",
+                    "title_short": "Hello, I am Daniel. I am a software enginner.",
                     "description": null,
                     "nav_label": "About"
                 }
@@ -28,6 +28,21 @@
                     "title_short": null,
                     "description": "A glimpse into my academic trajectory.",
                     "nav_label": "Education"
+                }
+            }
+        },
+        {
+            "id": "skills",
+            "categoryId": "showcase",
+            "jsonPath": "/sections/skills.json",
+            "faIcon": "fa-solid fa-tools",
+            "type": "column",
+            "locales": {
+                "en": {
+                    "title": "*Tech*",
+                    "title_short": null,
+                    "description": " ",
+                    "nav_label": "Tech"
                 }
             }
         }

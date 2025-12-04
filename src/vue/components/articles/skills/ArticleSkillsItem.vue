@@ -24,25 +24,25 @@
                 </span>
 
                 <!-- Percentage -->
-                <span v-if="percentageDisplay && progressBarAllowed"
+                <!-- <span v-if="percentageDisplay && progressBarAllowed"
                       class="skills-item-percentage-display text-1"
-                      v-html="percentageDisplay"/>
+                      v-html="percentageDisplay"/> -->
             </div>
 
             <!-- Progress Bar -->
-            <div v-if="item.hasPercentage && progressBarAllowed"
+            <!-- <div v-if="item.hasPercentage && progressBarAllowed"
                  class="skills-item-progress-display mt-1">
                 <div class="skills-item-progress-display-fill"
                      :style="`width:${item.percentage}%; background-color: ${item.fallbackFaIconColor}`"/>
-            </div>
+            </div> -->
 
             <!-- Experience Time -->
-            <div v-if="experienceTimeDisplay && progressBarAllowed"
+            <!-- <div v-if="experienceTimeDisplay && progressBarAllowed"
                  class="skills-item-description">
                 <p class="text-3 m-0">
                     <span v-html="experienceTimeDisplay"/>
                 </p>
-            </div>
+            </div> -->
 
             <!-- Description -->
             <div class="skills-item-description">

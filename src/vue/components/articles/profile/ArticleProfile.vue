@@ -72,8 +72,7 @@ const socialLinks = computed(() => {
 
 h1.title {
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: .5px;
     @include media-breakpoint-down($navigation-sidebar-breakpoint) {
         display: none;
     }
