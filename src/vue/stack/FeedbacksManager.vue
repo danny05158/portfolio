@@ -13,18 +13,24 @@
 </template>
 
 <script setup>
-import {inject, provide, ref, watch} from "vue"
+import {inject, provide, ref, watch, computed, onMounted} from "vue"
 import ActivitySpinner from "/src/vue/components/loaders/ActivitySpinner.vue"
 import Loader from "/src/vue/components/loaders/Loader.vue"
 import {useUtils} from "/src/composables/utils.js"
+import { useDataManagerStore } from "../../stores/DataManager"
 
+const dataManagerStore = useDataManagerStore()
 const utils = useUtils()
 
-/** @type {{value:Settings}} */
-const settings = inject("settings")
-const preloaderEnabled = settings.value.preloaderEnabled
+const preloaderEnabled = computed(() => {
+    return settings.value?.preloaderEnabled
+})
 
-const didMountPreloader = ref(!settings.value.preloaderEnabled)
+onMounted(() => {
+    didMountPreloader.value = !settings.value.preloaderEnabled
+})
+
+const didMountPreloader = ref(false)
 const loaderActive = ref(true)
 const loaderPageRefreshCount = ref(0)
 const loaderSmoothTransitionEnabled = ref(false)
@@ -39,6 +45,10 @@ const setSpinnerEnabled = (enabled, message) => {
     spinnerActive.value = enabled
     spinnerMessage.value = message || ""
 }
+
+const settings = computed(() => {
+    return dataManagerStore?.settings || {}
+})
 
 watch(() => loaderActive.value, () => {
     if(!loaderActive.value)

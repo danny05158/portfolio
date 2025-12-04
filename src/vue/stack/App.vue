@@ -1,6 +1,6 @@
 <template>
-    <DataManager>
-        <WindowObserver>
+        <WindowObserver
+         v-if="settings">
             <FeedbacksManager>
                 <LanguageManager>
                     <LocationManager>
@@ -11,10 +11,10 @@
                 </LanguageManager>
             </FeedbacksManager>
         </WindowObserver>
-    </DataManager>
 </template>
 
 <script setup>
+import { computed } from "vue"
 import DataManager from "/src/vue/stack/DataManager.vue"
 import LanguageManager from "/src/vue/stack/LanguageManager.vue"
 import FeedbacksManager from "/src/vue/stack/FeedbacksManager.vue"
@@ -22,4 +22,16 @@ import LocationManager from "/src/vue/stack/LocationManager.vue"
 import ModalManager from "/src/vue/stack/ModalManager.vue"
 import WindowObserver from "/src/vue/stack/WindowObserver.vue"
 import Resume from "/src/vue/stack/Resume.vue"
+import { useDataManagerStore } from "../../stores/DataManager"
+
+const dataManagerStore = useDataManagerStore()
+
+const settings = computed(() => {
+    return dataManagerStore.settings
+})
+
+dataManagerStore.loadData()
 </script>
+<style lang="scss" scoped>
+ @import "/src/scss/_theming.scss";
+</style>

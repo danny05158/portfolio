@@ -1,6 +1,11 @@
-import { defineStore } from "pinia";
 import { ref } from "vue";
+import { defineStore } from "pinia";
 import {useUtils} from "../composables/utils"
+import Category from "../models/Category"
+import Locales from "../models/Locales.js"
+import Profile from "../models/Profile.js"
+import Section from "../models/Section.js"
+import Settings from "../models/Settings.js"
 
 export const useDataManagerStore = defineStore("dataManager", () => {
   const categories = ref(null);
@@ -29,6 +34,7 @@ export const useDataManagerStore = defineStore("dataManager", () => {
     );
     validateSectionsAndCategories();
     await loadSectionJsonFiles();
+    didLoadAllJsonFiles.value = true
   };
 
   const parseSectionsAndCategories = (sectionsList, categoriesList) => {

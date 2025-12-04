@@ -14,15 +14,19 @@
 </template>
 
 <script setup>
-import {inject} from "vue"
+import {computed, inject} from "vue"
 import NavProfileCard from "/src/vue/components/navigation/layout/NavProfileCard.vue"
 import LanguagePicker from "/src/vue/components/widgets/LanguagePicker.vue"
 import {useUtils} from "/src/composables/utils.js"
+import { useDataManagerStore } from "../../../../stores/DataManager"
+
+const dataManagerStore = useDataManagerStore()
 
 const utils = useUtils()
 
-/** @type {{value: Profile}} */
-const profile = inject("profile")
+const profile = computed(() => {
+    return dataManagerStore.profile
+})
 
 /** @type {Function} */
 const localize = inject("localize")

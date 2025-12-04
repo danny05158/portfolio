@@ -4,11 +4,10 @@
 <script setup>
 import {computed, inject, onBeforeMount, onMounted, watch} from "vue"
 import {useConstants} from "/src/composables/constants.js"
+import { useDataManagerStore } from "../../../../stores/DataManager"
 
 const constants = useConstants()
-
-/** @type {{value: Category[]}} */
-const categories = inject("categories")
+const dataManagerStore = useDataManagerStore()
 
 /** @type {{value: Section}} */
 const previousSection = inject("previousSection")
@@ -51,7 +50,7 @@ const pillsControllerOptions = computed(() =>
 )
 
 const tabControllerOptions = computed(() =>
-    categories.value?.map(category => ({
+    dataManagerStore.categories?.map(category => ({
         active: currentSection.value?.category.id === category.id,
         model: category
     })) || []

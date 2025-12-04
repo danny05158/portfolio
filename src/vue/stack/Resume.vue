@@ -10,24 +10,28 @@
 </template>
 
 <script setup>
-import {inject, onMounted} from "vue"
+import {computed, inject, onMounted} from "vue"
 import Section from "/src/vue/components/sections/Section.vue"
 import NavigationWrapper from "/src/vue/components/navigation/NavigationWrapper.vue"
 import {useUtils} from "/src/composables/utils.js"
+import { useDataManagerStore } from "../../stores/DataManager"
 
+const dataManagerStore = useDataManagerStore()
 const utils = useUtils()
-
-/** @type {{value: Boolean}} */
-const didLoadAllJsonFiles = inject("didLoadAllJsonFiles")
 
 /** @type {{value: String}} */
 const presentationMode = inject("presentationMode")
 
-/** @type {{value: Section[]}} */
-const sections = inject("sections")
-
 /** @type {{value: Section}} */
 const currentSection = inject("currentSection")
+
+const sections = computed(() => {
+    return dataManagerStore.sections
+})
+
+const didLoadAllJsonFiles = computed(() => {
+  return dataManagerStore.didLoadAllJsonFiles
+})
 
 /**
  * @description This hook can be used to report a visit to an external analytics service.
