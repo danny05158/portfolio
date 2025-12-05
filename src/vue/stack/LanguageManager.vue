@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import {onMounted, provide, ref, computed} from "vue"
+import {provide, computed} from "vue"
 import { useDataManagerStore } from "../../stores/DataManager"
 
 const dataManagerStore = useDataManagerStore()
