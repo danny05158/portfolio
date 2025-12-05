@@ -8,12 +8,13 @@ import Section from "../models/Section.js"
 import Settings from "../models/Settings.js"
 
 export const useDataManagerStore = defineStore("dataManager", () => {
-  const categories = ref(null);
-  const profile = ref(null);
-  const sections = ref(null);
-  const settings = ref(null);
-  const strings = ref(null);
-  const didLoadAllJsonFiles = ref(false);
+  const categories = ref(null)
+  const profile = ref(null)
+  const sections = ref(null)
+  const settings = ref(null)
+  const strings = ref(null)
+  const didLoadAllJsonFiles = ref(false)
+  const languageId = ref(null)
 
   const loadData = async () => {
     const jSettings = await loadJson("/settings.json");
@@ -128,6 +129,7 @@ export const useDataManagerStore = defineStore("dataManager", () => {
     settings,
     strings,
     didLoadAllJsonFiles,
+    languageId,
 
     loadData,
     parseSectionsAndCategories,
