@@ -67,8 +67,6 @@ const selectedLanguage = inject("selectedLanguage")
 /** @type {{value:String}} */
 const presentationMode = inject("presentationMode")
 
-/** @type {Function} */
-const setSelectedLanguageWithId = inject("setSelectedLanguageWithId")
 
 /** @type {Function} */
 const setSpinnerEnabled = inject("setSpinnerEnabled")
@@ -100,13 +98,13 @@ const shouldCompress = computed(() => {
 
 const _onLanguageSelected = (language) => {
     if(presentationMode.value === constants.PresentationModes.ONE_AT_ONCE) {
-        setSelectedLanguageWithId(language.id)
+        dataManagerStore.languageId = language.id
         return
     }
 
     setSpinnerEnabled(true, strings.value.getTranslation("changing_language", language, language))
     setTimeout(() => {
-        setSelectedLanguageWithId(language.id)
+        dataManagerStore.languageId = language.id
         setSpinnerEnabled(false)
     }, 300)
 }

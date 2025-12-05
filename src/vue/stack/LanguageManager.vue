@@ -7,40 +7,28 @@ import {onMounted, provide, ref, computed} from "vue"
 import { useDataManagerStore } from "../../stores/DataManager"
 
 const dataManagerStore = useDataManagerStore()
-
 const supportedLanguages = dataManagerStore.settings.supportedLanguages
-const defaultLanguage = ref(null)
-const selectedLanguage = ref(null)
-const localStorageId = "language-manager"
-
-onMounted(() => {
-    if (!supportedLanguages.length) {
-        throw new Error("You must add at least one language to the supported languages setting.");
-    }
-
-    const savedId = window.localStorage.getItem(localStorageId)
-    defaultLanguage.value = supportedLanguages.find(language => language.isDefault)
-
-    selectedLanguage.value =
-        supportedLanguages.find(language => language.id === savedId) ||
-        supportedLanguages.find(language => navigator.language.includes(language.id)) ||
-        defaultLanguage.value ||
-        supportedLanguages[0]
-
-    setSelectedLanguageWithId(selectedLanguage.value.id)
-})
 
 const strings = computed(() => {
     return dataManagerStore.strings
 })
 
-const setSelectedLanguageWithId = (languageId) => {
-    const targetLanguage = supportedLanguages.find(language => language.id === languageId)
-    if(targetLanguage) {
-        selectedLanguage.value = targetLanguage
-        window.localStorage.setItem(localStorageId, targetLanguage.id)
+const selectedLanguage = computed(() => {
+    if (!supportedLanguages.length) {
+        throw new Error("You must add at least one language to the supported languages setting.");
     }
-}
+
+    const savedId = dataManagerStore.languageId
+
+    return supportedLanguages.find(language => language.id === savedId) ||
+        supportedLanguages.find(language => navigator.language.includes(language.id)) ||
+        defaultLanguage.value ||
+        supportedLanguages[0]
+})
+
+const defaultLanguage = computed(() => {
+    return supportedLanguages.find(language => language.isDefault)
+})
 
 /**
  * @param {Locales} locales
@@ -90,7 +78,6 @@ const localizeDate = (dateOrString) => {
 
 provide("selectedLanguage", selectedLanguage)
 provide("defaultLanguage", defaultLanguage)
-provide("setSelectedLanguageWithId", setSelectedLanguageWithId)
 provide("localize", localize)
 provide("localizeFromStrings", localizeFromStrings)
 provide("localizeDate", localizeDate)
