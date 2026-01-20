@@ -2,13 +2,13 @@
         <WindowObserver
          v-if="settings">
             <FeedbacksManager>
-                <LanguageManager>
+                <!-- <LanguageManager> -->
                     <LocationManager>
                         <ModalManager>
                             <Resume/>
                         </ModalManager>
                     </LocationManager>
-                </LanguageManager>
+                <!-- </LanguageManager> -->
             </FeedbacksManager>
         </WindowObserver>
 </template>

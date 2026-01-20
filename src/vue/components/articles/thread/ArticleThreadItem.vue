@@ -42,6 +42,8 @@ import {computed, inject} from "vue"
 import InfoBadge from "/src/vue/components/widgets/InfoBadge.vue"
 import InlineInfoList from "/src/vue/components/widgets/InlineInfoList.vue"
 import ArticleWidgetLinkList from "/src/vue/components/articles/base/ArticleWidgetLinkList.vue"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
+const languageManagerStore = useLanguageManagerStore()
 
 const props = defineProps({
     item: {
@@ -51,21 +53,13 @@ const props = defineProps({
     }
 })
 
-/** @type {Function} */
-const localize = inject("localize")
-
-/** @type {Function} */
-const localizeFromStrings = inject("localizeFromStrings")
-
-/** @type {Function} */
-const localizeDate = inject("localizeDate")
 
 const location = computed(() => {
-    return localize(props.item.locales, "institution", true)
+    return languageManagerStore.localize(props.item.locales, "institution", true)
 })
 
 const date = computed(() => {
-    return localizeDate(props.item.dateStart)
+    return languageManagerStore.localizeDate(props.item.dateStart)
 })
 
 const links = computed(() => {

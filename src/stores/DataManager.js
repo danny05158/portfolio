@@ -1,20 +1,20 @@
 import { ref } from "vue";
 import { defineStore } from "pinia";
-import {useUtils} from "../composables/utils"
-import Category from "../models/Category"
-import Locales from "../models/Locales.js"
-import Profile from "../models/Profile.js"
-import Section from "../models/Section.js"
-import Settings from "../models/Settings.js"
+import { useUtils } from "../composables/utils";
+import Category from "../models/Category";
+import Locales from "../models/Locales.js";
+import Profile from "../models/Profile.js";
+import Section from "../models/Section.js";
+import Settings from "../models/Settings.js";
 
 export const useDataManagerStore = defineStore("dataManager", () => {
-  const categories = ref(null)
-  const profile = ref(null)
-  const sections = ref(null)
-  const settings = ref(null)
-  const strings = ref(null)
-  const didLoadAllJsonFiles = ref(false)
-  const languageId = ref(null)
+  const categories = ref(null);
+  const profile = ref(null);
+  const sections = ref(null);
+  const settings = ref(null);
+  const strings = ref(null);
+  const didLoadAllJsonFiles = ref(false);
+  const languageId = ref(null);
 
   const loadData = async () => {
     const jSettings = await loadJson("/settings.json");
@@ -35,7 +35,7 @@ export const useDataManagerStore = defineStore("dataManager", () => {
     );
     validateSectionsAndCategories();
     await loadSectionJsonFiles();
-    didLoadAllJsonFiles.value = true
+    didLoadAllJsonFiles.value = true;
   };
 
   const parseSectionsAndCategories = (sectionsList, categoriesList) => {
@@ -82,7 +82,7 @@ export const useDataManagerStore = defineStore("dataManager", () => {
   };
 
   const validateSectionsAndCategories = () => {
-    const utils = useUtils()
+    const utils = useUtils();
 
     if (utils.hasDuplications(sections.value, "id")) {
       throw new Error("Each section must have an unique id!");
@@ -109,7 +109,7 @@ export const useDataManagerStore = defineStore("dataManager", () => {
   };
 
   const loadJson = async (path) => {
-    const basePath = import.meta.env.BASE_URL.replace(/\/$/, '')
+    const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 
     try {
       const response = await fetch(basePath + "/data/" + path);
@@ -134,6 +134,6 @@ export const useDataManagerStore = defineStore("dataManager", () => {
     loadData,
     parseSectionsAndCategories,
     validateSectionsAndCategories,
-    loadSectionJsonFiles
-  }
-})
+    loadSectionJsonFiles,
+  };
+});
