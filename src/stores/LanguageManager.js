@@ -1,5 +1,6 @@
 import { useDataManagerStore } from "./DataManager"
 import {computed} from "vue"
+import { defineStore } from "pinia"
 
 export const useLanguageManagerStore = defineStore("languageManager", () => {
   const dataManagerStore = useDataManagerStore()
