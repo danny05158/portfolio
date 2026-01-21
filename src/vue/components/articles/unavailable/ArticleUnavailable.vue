@@ -35,9 +35,11 @@
 </template>
 
 <script setup>
+import {inject} from "vue"
 import Alert from "/src/vue/components/widgets/Alert.vue"
 import Article from "/src/vue/components/articles/base/Article.vue"
-import {inject} from "vue"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
+const languageManagerStore = useLanguageManagerStore()
 
 const props = defineProps({
     /** @type {Article} **/
@@ -48,8 +50,7 @@ const props = defineProps({
 })
 
 /** @type {Function} */
-const localize = inject("localize")
-
+const localize = languageManagerStore.localize
 const itemProps = ["img", "fallbackFaIcon", "fallbackFaIconColor", "dateStart", "dateEnd", "percentage", "links"]
 const localesProps = ["title", "description", "institution", "location", "country", "tags"]
 

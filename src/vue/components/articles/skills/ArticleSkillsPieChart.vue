@@ -9,7 +9,9 @@ import { Pie } from 'vue-chartjs'
 import { Chart as ChartJS, ArcElement, Title, Tooltip } from 'chart.js'
 import {computed, inject, onBeforeMount} from "vue"
 import {useUtils} from "/src/composables/utils.js"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
 
+const languageManagerStore = useLanguageManagerStore()
 const utils = useUtils()
 
 const props = defineProps({
@@ -20,8 +22,7 @@ const props = defineProps({
     }
 })
 
-/** @type {Function} */
-const localize = inject("localize")
+const localize = languageManagerStore.localize
 
 onBeforeMount(() => {
     ChartJS.register(Title, Tooltip, ArcElement)

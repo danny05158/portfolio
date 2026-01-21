@@ -24,12 +24,14 @@
 import {inject, ref, watch} from "vue"
 import {useScheduler} from "/src/composables/scheduler.js"
 import {useUtils} from "/src/composables/utils.js"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
+
+const languageManagerStore = useLanguageManagerStore()
 
 const scheduler = useScheduler()
 const utils = useUtils()
 
-/** @type {Function} */
-const localize = inject("localize")
+const localize = languageManagerStore.localize
 
 const props = defineProps({
     /** @type {Section[]} **/

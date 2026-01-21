@@ -13,6 +13,8 @@
 <script setup>
 import {computed, inject} from "vue"
 import SolidDivider from "/src/vue/components/widgets/SolidDivider.vue"
+import { useLanguageManagerStore } from "../../../stores/LanguageManager"
+const languageManagerStore = useLanguageManagerStore()
 
 const props = defineProps({
     /** @type {Section} **/
@@ -25,8 +27,7 @@ const props = defineProps({
 /** @type {{value:Boolean}} */
 const isScreenXlOrLarger = inject("isScreenXlOrLarger")
 
-/** @type {Function} */
-const localize = inject("localize")
+const localize = languageManagerStore.localize
 
 const title = computed(() => {
     const title = localize(props.model.locales, "title", true)

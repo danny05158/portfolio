@@ -25,8 +25,11 @@ import ArticleProfileItem from "/src/vue/components/articles/profile/ArticleProf
 import SocialLinks from "/src/vue/components/widgets/SocialLinks.vue"
 import InlineLinkList from "/src/vue/components/widgets/InlineLinkList.vue"
 import { useDataManagerStore } from "../../../../stores/DataManager"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
 
 const dataManagerStore = useDataManagerStore()
+const languageManagerStore = useLanguageManagerStore()
+const localize = languageManagerStore.localize
 
 const props = defineProps({
     model: {
@@ -36,8 +39,6 @@ const props = defineProps({
     }
 })
 
-/** @type {Function} */
-const localize = inject("localize")
 
 /** @type {{value:Boolean}} */
 const isScreenXlOrLarger = inject("isScreenXlOrLarger")

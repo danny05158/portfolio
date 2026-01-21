@@ -51,8 +51,10 @@ import Dropdown from 'bootstrap/js/src/dropdown'
 import {useUtils} from "/src/composables/utils.js"
 import {useConstants} from "/src/composables/constants.js"
 import { useDataManagerStore } from "../../../stores/DataManager"
+import { useLanguageManagerStore } from "../../../stores/LanguageManager"
 
 const dataManagerStore = useDataManagerStore()
+const languageManagerStore = useLanguageManagerStore()
 
 const constants = useConstants()
 const utils = useUtils()
@@ -61,8 +63,8 @@ const props = defineProps({
     shrink: Boolean
 })
 
-/** @type {{value:Language}} */
-const selectedLanguage = inject("selectedLanguage")
+
+const selectedLanguage = languageManagerStore.selectedLanguage
 
 /** @type {{value:String}} */
 const presentationMode = inject("presentationMode")
@@ -88,7 +90,7 @@ const supportsMultipleLanguages = computed(() => {
 
 const availableLanguages = computed(() => {
     return settings.value.supportedLanguages.filter(
-        language => language.id !== selectedLanguage.value.id
+        language => language.id !== selectedLanguage.id
     )
 })
 

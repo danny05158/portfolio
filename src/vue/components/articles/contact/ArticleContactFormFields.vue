@@ -59,20 +59,22 @@
 </template>
 
 <script setup>
+import {inject, ref} from "vue"
 import Alert from "/src/vue/components/widgets/Alert.vue"
 import XLButton from "/src/vue/components/widgets/XLButton.vue"
-import {inject, ref} from "vue"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
 
 const props = defineProps({
     errorMessage: String,
 })
 
+const languageManagerStore = useLanguageManagerStore()
+
 const emit = defineEmits(["input"])
 
 const focusId = ref(null)
 
-/** @type {Function} */
-const localizeFromStrings = inject("localizeFromStrings")
+const localizeFromStrings = languageManagerStore.localizeFromStrings
 
 const _onFocusIn = (id) => {
     focusId.value = id

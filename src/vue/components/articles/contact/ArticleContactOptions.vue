@@ -10,8 +10,10 @@ import {computed, inject} from "vue"
 import Article from "/src/vue/components/articles/base/Article.vue"
 import OptionsList from "/src/vue/components/widgets/OptionsList.vue"
 import { useDataManagerStore } from "../../../../stores/DataManager"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
 
 const dataManagerStore = useDataManagerStore()
+const languageManagerStore = useLanguageManagerStore()
 
 const props = defineProps({
     /** @type {Article} **/
@@ -21,11 +23,8 @@ const props = defineProps({
     }
 })
 
-/** @type {Function} */
-const localize = inject("localize")
-
-/** @type {Function} */
-const localizeFromStrings = inject("localizeFromStrings")
+const localize = languageManagerStore.localize
+const localizeFromStrings = languageManagerStore.localizeFromStrings
 
 const contactLinks = computed(() => {
     const contactIds = props.model.getSetting("contact_ids", [])

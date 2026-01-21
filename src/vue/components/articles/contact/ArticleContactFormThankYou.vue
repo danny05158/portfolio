@@ -23,9 +23,10 @@
 </template>
 
 <script setup>
+import {inject} from "vue"
 import IconView from "/src/vue/components/widgets/IconView.vue"
 import SolidDivider from "/src/vue/components/widgets/SolidDivider.vue"
-import {inject} from "vue"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
 
 const props = defineProps({
     title: String,
@@ -33,10 +34,10 @@ const props = defineProps({
     info: String,
 })
 
+const languageManagerStore = useLanguageManagerStore()
 const emit = defineEmits(["reset"])
 
-/** @type {Function} */
-const localizeFromStrings = inject("localizeFromStrings")
+const localizeFromStrings = languageManagerStore.localizeFromStrings
 
 const _onAnotherMessageButton = () => {
     emit("reset")

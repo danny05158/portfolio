@@ -29,8 +29,10 @@ import NavSidebarFooter from "/src/vue/components/navigation/sidebar/NavSidebarF
 import {useUtils} from "/src/composables/utils.js"
 
 import { useDataManagerStore } from "../../../../stores/DataManager"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
 
 const dataManagerStore = useDataManagerStore()
+const languageManagerStore = useLanguageManagerStore()
 
 const utils = useUtils()
 
@@ -42,7 +44,7 @@ const props = defineProps({
 const emit = defineEmits(['toggle', 'select'])
 
 /** @type {Function} */
-const localize = inject("localize")
+const localize = languageManagerStore.localize
 
 /** @type {{value: Object}} */
 const lastKeyPressed = inject("lastKeyPressed")

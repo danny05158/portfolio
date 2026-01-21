@@ -16,6 +16,8 @@
 import Article from "/src/vue/components/articles/base/Article.vue"
 import {inject} from "vue"
 import ArticleTimelineItem from "/src/vue/components/articles/timeline/ArticleTimelineItem.vue"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
+const languageManagerStore = useLanguageManagerStore()
 
 const props = defineProps({
     model: {
@@ -25,8 +27,7 @@ const props = defineProps({
     }
 })
 
-/** @type {Function} */
-const localize = inject("localize")
+const localize = languageManagerStore.localize
 </script>
 
 <style lang="scss" scoped>

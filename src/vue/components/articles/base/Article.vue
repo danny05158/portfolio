@@ -16,6 +16,7 @@
 import {computed, inject} from "vue"
 import ArticleTitle from "/src/vue/components/articles/base/ArticleTitle.vue"
 import Section from "/src/models/Section.js"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
 
 const props = defineProps({
     model: {
@@ -24,8 +25,10 @@ const props = defineProps({
     }
 })
 
+const languageManagerStore = useLanguageManagerStore()
+
 /** @type {Function} */
-const localize = inject("localize")
+const localize = languageManagerStore.localize
 
 const sectionType = computed(() => {
     return props.model.section?.type
