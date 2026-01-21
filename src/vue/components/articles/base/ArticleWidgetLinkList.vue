@@ -14,13 +14,16 @@
 
 <script setup>
 import {inject} from "vue"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
+
+const languageManagerStore = useLanguageManagerStore()
 
 const props = defineProps({
     links: Array
 })
 
 /** @type {Function} */
-const localizeFromStrings = inject("localizeFromStrings")
+const localizeFromStrings = languageManagerStore.localizeFromStrings
 
 const _getLabel = (link) => {
     if(link['staticLabel'])

@@ -5,8 +5,11 @@
 import {computed, inject, onMounted, ref, watch} from "vue"
 import {useScheduler} from "/src/composables/scheduler.js"
 import { useDataManagerStore } from "../../../../stores/DataManager"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
+
 
 const dataManagerStore = useDataManagerStore()
+const languageManagerStore = useLanguageManagerStore()
 
 const scheduler = useScheduler()
 
@@ -34,8 +37,7 @@ const windowWidth = inject("windowWidth")
 /** @type {{value: Boolean}} */
 const windowHeight = inject("windowHeight")
 
-/** @type {{value: Language}} */
-const selectedLanguage = inject("selectedLanguage")
+const selectedLanguage = languageManagerStore.selectedLanguage
 
 /** @type {{value: Boolean}} */
 const canScroll = inject("canScroll")
@@ -48,7 +50,7 @@ watch(() => canScroll.value, () => {_forceScrollToCurrentSection()})
 watch(() => windowScrollY.value, () => { _spyScroll() })
 watch(() => windowWidth.value, () => { _onWindowSizeChanged() })
 watch(() => windowHeight.value, () => { _onWindowSizeChanged() })
-watch(() => selectedLanguage.value, () => { _onLanguageChanged() })
+watch(() => selectedLanguage, () => { _onLanguageChanged() })
 watch(() => shouldResetScroll.value, () => { _onScrollResetTriggered() })
 
 onMounted(() => {

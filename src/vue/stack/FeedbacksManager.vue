@@ -76,7 +76,3 @@ provide("spinnerActive", spinnerActive)
 provide("spinnerMessage", spinnerMessage)
 provide("setSpinnerEnabled", setSpinnerEnabled)
 </script>
-
-<style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-</style>

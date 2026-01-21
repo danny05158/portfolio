@@ -27,6 +27,8 @@
 
 <script setup>
 import {computed, inject} from "vue"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
+const languageManagerStore = useLanguageManagerStore()
 
 const props = defineProps({
     options: Object
@@ -34,8 +36,7 @@ const props = defineProps({
 
 const emit = defineEmits(['select'])
 
-/** @type {Function} */
-const localize = inject("localize")
+const localize = languageManagerStore.localize
 
 /** @type {{value: Boolean}} */
 const shouldAddChromeBottomOffset = inject("shouldAddChromeBottomOffset")

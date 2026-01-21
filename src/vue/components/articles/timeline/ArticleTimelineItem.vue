@@ -25,6 +25,8 @@
 import {inject} from "vue"
 import IconView from "/src/vue/components/widgets/IconView.vue"
 import ArticleTimelineItemContent from "/src/vue/components/articles/timeline/ArticleTimelineItemContent.vue"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
+const languageManagerStore = useLanguageManagerStore() 
 
 const props = defineProps({
     item: {
@@ -34,11 +36,10 @@ const props = defineProps({
     }
 })
 
-/** @type {Function} */
-const localize = inject("localize")
 
-/** @type {Function} */
-const localizeDate = inject("localizeDate")
+const localizeDate = languageManagerStore.localizeDate
+const localize = languageManagerStore.localize
+
 </script>
 
 <style lang="scss" scoped>

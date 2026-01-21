@@ -5,9 +5,12 @@
 import {computed, inject, onBeforeMount, onMounted, watch} from "vue"
 import {useConstants} from "/src/composables/constants.js"
 import { useDataManagerStore } from "../../../../stores/DataManager"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
+
 
 const constants = useConstants()
 const dataManagerStore = useDataManagerStore()
+const languageManagerStore = useLanguageManagerStore()
 
 /** @type {{value: Section}} */
 const previousSection = inject("previousSection")
@@ -28,14 +31,14 @@ const navigateToCategory = inject("navigateToCategory")
 const isDesktopLayout = inject("isDesktopLayout")
 
 /** @type {{value: Language}} */
-const selectedLanguage = inject("selectedLanguage")
+const selectedLanguage = languageManagerStore.selectedLanguage
 
 const highlightedSection = computed(() => {
     return currentSection.value
 })
 
 watch(() => currentSection.value, () => { _onSectionChanged() })
-watch(() => selectedLanguage.value, () => { _onViewportChanged() })
+watch(() => selectedLanguage, () => { _onViewportChanged() })
 watch(() => shouldResetScroll.value, () => { _onScrollResetTriggered() })
 
 onBeforeMount(() => {

@@ -5,6 +5,8 @@
 
 <script setup>
 import {inject} from "vue"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
+const languageManagerStore = useLanguageManagerStore()
 
 const props = defineProps({
     item: {
@@ -14,8 +16,7 @@ const props = defineProps({
     }
 })
 
-/** @type {Function} */
-const localize = inject("localize")
+const localize = languageManagerStore.localize
 </script>
 
 <style lang="scss" scoped>

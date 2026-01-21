@@ -19,8 +19,10 @@ import NavProfileCard from "/src/vue/components/navigation/layout/NavProfileCard
 import LanguagePicker from "/src/vue/components/widgets/LanguagePicker.vue"
 import {useUtils} from "/src/composables/utils.js"
 import { useDataManagerStore } from "../../../../stores/DataManager"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
 
 const dataManagerStore = useDataManagerStore()
+const languageManagerStore = useLanguageManagerStore()
 
 const utils = useUtils()
 
@@ -28,8 +30,7 @@ const profile = computed(() => {
     return dataManagerStore.profile
 })
 
-/** @type {Function} */
-const localize = inject("localize")
+const localize = languageManagerStore.localize
 </script>
 
 <style lang="scss" scoped>

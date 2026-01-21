@@ -39,6 +39,8 @@
 import {computed, inject} from "vue"
 import Tags from "/src/vue/components/widgets/Tags.vue"
 import SocialLinks from "/src/vue/components/widgets/SocialLinks.vue"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
+const languageManagerStore = useLanguageManagerStore()  
 
 const props = defineProps({
     /** @type {ArticleItem} **/
@@ -48,11 +50,9 @@ const props = defineProps({
     },
 })
 
-/** @type {Function} */
-const localize = inject("localize")
 
-/** @type {Function} */
-const localizeFromStrings = inject("localizeFromStrings")
+const localize = languageManagerStore.localize
+const localizeFromStrings = languageManagerStore.localizeFromStrings
 
 const parsedTags = computed(() => {
     const tags = localize(props.item.locales, "tags")

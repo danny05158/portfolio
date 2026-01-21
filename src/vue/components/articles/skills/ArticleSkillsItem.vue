@@ -64,8 +64,10 @@ import {computed, inject} from "vue"
 import {useUtils} from "/src/composables/utils.js"
 import IconView from "/src/vue/components/widgets/IconView.vue"
 import ArticleWidgetLinkList from "/src/vue/components/articles/base/ArticleWidgetLinkList.vue"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
 
 const utils = useUtils()
+const languageManagerStore = useLanguageManagerStore()
 
 const props = defineProps({
     /** @type {ArticleItem} **/
@@ -79,11 +81,8 @@ const props = defineProps({
     progressBarAllowed: Boolean
 })
 
-/** @type {Function} */
-const localize = inject("localize")
-
-/** @type {Function} */
-const localizeFromStrings = inject("localizeFromStrings")
+const localize = languageManagerStore.localize
+const localizeFromStrings = languageManagerStore.localizeFromStrings
 
 const percentageDisplay = computed(() => {
     if(!props.item.percentage)

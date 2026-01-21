@@ -25,6 +25,8 @@ import {computed, inject, onMounted, ref} from "vue"
 import Article from "/src/vue/components/articles/base/Article.vue"
 import FilterTabs from "/src/vue/components/widgets/FilterTabs.vue"
 import ArticlePortfolioItem from "/src/vue/components/articles/portfolio/ArticlePortfolioItem.vue"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
+const languageManagerStore = useLanguageManagerStore()  
 
 const props = defineProps({
     /** @type {Article} **/
@@ -34,8 +36,7 @@ const props = defineProps({
     }
 })
 
-/** @type {Function} */
-const localize = inject("localize")
+const localize = languageManagerStore.localize
 
 const defaultCategoryId = "all"
 const selectedCategoryId = ref(defaultCategoryId)

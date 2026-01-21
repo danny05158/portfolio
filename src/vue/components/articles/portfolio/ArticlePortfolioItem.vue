@@ -35,6 +35,8 @@ import {inject, onMounted, onUnmounted, ref, watch} from "vue"
 import {useScheduler} from "/src/composables/scheduler.js"
 import {useUtils} from "/src/composables/utils.js"
 import IconView from "/src/vue/components/widgets/IconView.vue"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
+const languageManagerStore = useLanguageManagerStore()
 
 const scheduler = useScheduler()
 const utils = useUtils()
@@ -50,8 +52,7 @@ const props = defineProps({
     transitionCount: Number
 })
 
-/** @type {Function} */
-const localize = inject("localize")
+const localize = languageManagerStore.localize
 
 /** @type {Function} */
 const showProjectModal = inject("showProjectModal")

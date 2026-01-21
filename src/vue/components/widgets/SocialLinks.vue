@@ -20,6 +20,8 @@
 
 <script setup>
 import {computed, inject} from "vue"
+import { useLanguageManagerStore } from "../../../stores/LanguageManager"
+const languageManagerStore = useLanguageManagerStore()
 
 const props = defineProps({
     items: Array,
@@ -28,8 +30,8 @@ const props = defineProps({
     class: String
 })
 
-/** @type {Function} */
-const localizeFromStrings = inject("localizeFromStrings")
+
+const localizeFromStrings = languageManagerStore.localizeFromStrings
 
 const parsedLinks = computed(() => {
     return props.items.map(item => ({

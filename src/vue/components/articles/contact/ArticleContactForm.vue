@@ -24,9 +24,11 @@ import {useUtils} from "/src/composables/utils.js"
 import Article from "/src/vue/components/articles/base/Article.vue"
 import ArticleContactFormFields from "/src/vue/components/articles/contact/ArticleContactFormFields.vue"
 import ArticleContactFormThankYou from "/src/vue/components/articles/contact/ArticleContactFormThankYou.vue"
+import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
 
 const emails = useEmails()
 const utils = useUtils()
+const languageManagerStore = useLanguageManagerStore()
 
 const props = defineProps({
     /** @type {Article} **/
@@ -39,11 +41,8 @@ const props = defineProps({
 /** @type {Function} */
 const setSpinnerEnabled = inject("setSpinnerEnabled")
 
-/** @type {Function} */
-const localize = inject("localize")
-
-/** @type {Function} */
-const localizeFromStrings = inject("localizeFromStrings")
+const localize = languageManagerStore.localize
+const localizeFromStrings = languageManagerStore.localizeFromStrings
 
 /** @type {Function} */
 const scrollToTopOfCurrentSection = inject("scrollToTopOfCurrentSection")

@@ -7,8 +7,10 @@ import {inject, onMounted, provide, ref, watch} from "vue"
 import {useScheduler} from "/src/composables/scheduler.js"
 import {useConstants} from "/src/composables/constants.js"
 import { useDataManagerStore } from "../../stores/DataManager"
+import { useLanguageManagerStore } from "../../stores/LanguageManager"
 
 const dataManagerStore = useDataManagerStore()
+const languageManagerStore = useLanguageManagerStore()
 const constants = useConstants()
 const scheduler = useScheduler()
 
@@ -24,8 +26,7 @@ const isDesktopLayout = inject("isDesktopLayout")
 /** @type {Function} */
 const setSpinnerEnabled = inject("setSpinnerEnabled")
 
-/** @type {Function} */
-const localizeFromStrings = inject("localizeFromStrings")
+const localizeFromStrings = languageManagerStore.localizeFromStrings
 
 const currentSection = ref(null)
 const previousSection = ref(null)
