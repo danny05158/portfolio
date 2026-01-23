@@ -1,0 +1,52 @@
+{
+    "articles": [
+        {
+            "id": 1,
+            "component": "ArticleTimeline",
+            "locales": {},
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "desc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "dateStart": {"year": 2018, "month": 5},
+                    "dateEnd": {"year": 2018, "month": 12},
+                    "img": "",
+                    "fallbackFaIcon": "fa-solid fa-laptop-code",
+                    "fallbackFaIconColor": "#140f29",
+
+                    "locales": {
+                        "en": {
+                            "title": "Fullstack Academy of Code",
+                            "description": "Completed Engineering program covering: Javascript, React/Redux, Sequelize ORM, HTML, CSS and testing frameworks Mocha/Chai.",
+                            "country": "US",
+                            "institution": "Fullstack Academy of Code",
+                            "tags": []
+                        }
+                    }
+                },
+
+                {
+                    "id": 2,
+                    "dateStart": {"year": 2012, "month": 5},
+                    "dateEnd": {"year": 2014, "month": 12},
+                    "img": "",
+                    "fallbackFaIcon": "fa-solid fa-laptop-code",
+                    "fallbackFaIconColor": "#140f29",
+
+                    "locales": {
+                        "en": {
+                            "title": "Northern Illinois University",
+                            "description": "Bachelor of Science, Economics. Minor: Computer Science",
+                            "country": "US",
+                            "institution": "Northern Illinois University",
+                            "tags": []
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

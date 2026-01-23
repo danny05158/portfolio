@@ -1,0 +1,49 @@
+{
+    "name": " ",
+    "profilePictureUrl": "images/pictures/profile.jpeg",
+
+    "locales": {
+        "en": {
+            "credits": " ",
+            "role": " "
+        }
+    },
+
+    "contactOptions": [
+        {
+            "id": "address",
+            "faIcon": "fa-regular fa-map",
+            "href": null,
+            "locales": {
+                "en": {
+                    "value": "IL 60177",
+                    "valueShort": "IL"
+                }
+            }
+        },
+
+        {
+            "id": "email",
+            "value": "dc90c@proton.me",
+            "valueShort": "dc90c@proton.me",
+            "faIcon": "fa-regular fa-envelope",
+            "href": "mailto:dc90c@proton.me"
+        },
+
+        {
+            "id": "github",
+            "value": "https://github.com/danny05158",
+            "valueShort": "https://github.com/danny05158",
+            "faIcon": "fa-brands fa-github",
+            "href": "https://github.com/danny05158"
+        },
+
+        {
+            "id": "linkedin",
+            "value": "https://www.linkedin.com/in/dancasasola/",
+            "valueShort": "https://www.linkedin.com/in/dancasasola/",
+            "faIcon": "fa-brands fa-linkedin",
+            "href": "https://www.linkedin.com/in/dancasasola/"
+        }
+    ]
+}

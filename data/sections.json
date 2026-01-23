@@ -1,0 +1,50 @@
+{
+    "sections": [
+        {
+            "id": "about",
+            "categoryId": "home",
+            "jsonPath": "/sections/cover.json",
+            "faIcon": "fa-solid fa-address-card",
+            "type": "centered",
+            "locales": {
+                "en": {
+                    "title": "Hello, I'm Daniel. I am a software engineer.",
+                    "title_short": "Hello, I'm Daniel. I am a software engineer.",
+                    "description": null,
+                    "nav_label": "Contact"
+                }
+            }
+        },
+
+        {
+            "id": "education",
+            "categoryId": "background",
+            "jsonPath": "/sections/education.json",
+            "faIcon": "fa-solid fa-graduation-cap",
+            "type": "column",
+            "locales": {
+                "en": {
+                    "title": "*Education*",
+                    "title_short": null,
+                    "description": null,
+                    "nav_label": "Education"
+                }
+            }
+        },
+        {
+            "id": "skills",
+            "categoryId": "showcase",
+            "jsonPath": "/sections/skills.json",
+            "faIcon": "fa-solid fa-tools",
+            "type": "column",
+            "locales": {
+                "en": {
+                    "title": "*Tech*",
+                    "title_short": null,
+                    "description": " ",
+                    "nav_label": "Tech"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,205 @@
+{
+    "articles": [
+        {
+            "id": 1,
+            "component": "ArticleSkills",
+            "locales": {},
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc",
+                "max_items_per_line": 2,
+                "transparent_item_icon_background": false,
+                "small_icons": false,
+                "chart": null
+            },
+            "items": [
+                {
+                    "id": 2,
+                    "dateStart": null,
+                    "img": null,
+                    "fallbackFaIcon": "fa-solid fa-mobile-alt",
+                    "fallbackFaIconColor": null,
+                    "percentage": null,
+                    "locales": {
+                        "en": {
+                            "title": "Responsive Layouts",
+                            "description": "Craft adaptable layouts using CSS, Flexbox and web developer tools.",
+                            "level": null
+                        }
+                    }
+                },
+                {
+                    "id": 5,
+                    "dateStart": null,
+                    "img": null,
+                    "fallbackFaIcon": "fa-solid fa-brands fa-figma",
+                    "fallbackFaIconColor": null,
+                    "percentage": null,
+                    "locales": {
+                        "en": {
+                            "title": "Interactive Design",
+                            "description": "Translate wireframes into user-friendly experiences.",
+                            "level": null
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "component": "ArticleSkills",
+            "locales": {
+                "en": {
+                    "title": "Tools"
+                }
+            },
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc",
+                "max_items_per_line": 2,
+                "transparent_item_icon_background": false,
+                "small_icons": false,
+                "chart": null
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "dateStart": null,
+                    "img": null,
+                    "fallbackFaIcon": "fa-solid fa-code-branch",
+                    "fallbackFaIconColor": null,
+                    "percentage": null,
+                    "locales": {
+                        "en": {
+                            "title": "GIT",
+                            "description": "Use version control for as a collaborative development tool.",
+                            "level": null
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "dateStart": null,
+                    "img": null,
+                    "fallbackFaIcon": "fa-solid fa-laptop-code",
+                    "fallbackFaIconColor": null,
+                    "percentage": null,
+                    "locales": {
+                        "en": {
+                            "title": "Jest",
+                            "description": "Maintain a commitment to code quality by writing unit tests using the Jest framework.",
+                            "level": null
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "component": "ArticleSkills",
+            "locales": {
+                "en": {"title": "Frontend"}
+            },
+            "settings": {
+                "order_items_by": " ",
+                "order_items_sort": "desc",
+                "max_items_per_line": 2,
+                "transparent_item_icon_background": true,
+                "small_icons": false,
+                "chart": null
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "dateStart": {"year": 2020, "month": 4},
+                    "img": null,
+                    "fallbackFaIcon": "fa-brands fa-html5",
+                    "fallbackFaIconColor": null,
+                    "percentage": 95,
+                    "locales": {
+                        "en": {
+                            "title": "HTML",
+                            "description": ""
+                        }
+                    }
+                },
+
+                {
+                    "id": 2,
+                    "dateStart": {"year": 2021, "month": 4},
+                    "img": null,
+                    "fallbackFaIcon": "fa-brands fa-css3-alt",
+                    "fallbackFaIconColor": null,
+                    "percentage": 90,
+                    "locales": {
+                        "en": {
+                            "title": "CSS",
+                            "description": ""
+                        }
+                    }
+                },
+
+                {
+                    "id": 3,
+                    "dateStart": {"year": 2020, "month": 8},
+                    "img": null,
+                    "fallbackFaIcon": "fa-brands fa-js-square",
+                    "fallbackFaIconColor": null,
+                    "percentage": 85,
+                    "locales": {
+                        "en": {
+                            "title": "Javascript",
+                            "description": ""
+                        }
+                    }
+                },
+
+                {
+                    "id": 6,
+                    "dateStart": {"year": 2021, "month": 8},
+                    "img": null,
+                    "fallbackFaIcon": "fa-solid fa-code",
+                    "fallbackFaIconColor": null,
+                    "percentage": 85,
+                    "locales": {
+                        "en": {
+                            "title": "TypeScript",
+                            "description": ""
+                        }
+                    }
+                },
+
+                {
+                    "id": 4,
+                    "dateStart": {"year": 2021, "month": 3},
+                    "img": null,
+                    "fallbackFaIcon": "fa-brands fa-vuejs",
+                    "fallbackFaIconColor": null,
+                    "percentage": 100,
+                    "locales": {
+                        "en": {
+                            "title": "Vue",
+                            "description": ""
+                        }
+                    }
+                },
+
+                {
+                    "id": 5,
+                    "dateStart": {"year": 2024, "month": 1},
+                    "img": null,
+                    "fallbackFaIcon": "fa-brands fa-react",
+                    "fallbackFaIconColor": null,
+                    "percentage": 75,
+                    "locales": {
+                        "en": {
+                            "title": "React",
+                            "description": ""
+                        }
+                    }
+                }
+            ]
+        }
+
+    ]
+}
