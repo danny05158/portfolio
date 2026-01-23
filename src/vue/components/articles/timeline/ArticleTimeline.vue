@@ -2,22 +2,18 @@
     <Article class="article-timeline"
              :model="model">
         <ul class="timeline">
-            <!-- Items -->
-            <ArticleTimelineItem v-for="item in model.items"
-                                 :item="item"/>
-
-            <!-- Trailing Item -->
-            <ArticleTimelineItem/>
+            <ArticleTimelineItem 
+                v-for="item in model.items"
+                    :key="item.id"
+                    :item="item"
+            />
         </ul>
     </Article>
 </template>
 
 <script setup>
 import Article from "/src/vue/components/articles/base/Article.vue"
-import {inject} from "vue"
 import ArticleTimelineItem from "/src/vue/components/articles/timeline/ArticleTimelineItem.vue"
-import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
-const languageManagerStore = useLanguageManagerStore()
 
 const props = defineProps({
     model: {
@@ -27,7 +23,6 @@ const props = defineProps({
     }
 })
 
-const localize = languageManagerStore.localize
 </script>
 
 <style lang="scss" scoped>

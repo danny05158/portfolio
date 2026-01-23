@@ -8,10 +8,10 @@
             "type": "centered",
             "locales": {
                 "en": {
-                    "title": "Hello, I am Daniel. I am a software enginner.",
-                    "title_short": "Hello, I am Daniel. I am a software enginner.",
+                    "title": "Hello, I'm Daniel. I am a software engineer.",
+                    "title_short": "Hello, I'm Daniel. I am a software engineer.",
                     "description": null,
-                    "nav_label": "About"
+                    "nav_label": "Contact"
                 }
             }
         },
@@ -24,9 +24,9 @@
             "type": "column",
             "locales": {
                 "en": {
-                    "title": "*Education* Background",
+                    "title": "*Education*",
                     "title_short": null,
-                    "description": "A glimpse into my academic trajectory.",
+                    "description": null,
                     "nav_label": "Education"
                 }
             }

@@ -22,7 +22,6 @@
 </template>
 
 <script setup>
-import {inject} from "vue"
 import IconView from "/src/vue/components/widgets/IconView.vue"
 import ArticleTimelineItemContent from "/src/vue/components/articles/timeline/ArticleTimelineItemContent.vue"
 import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
