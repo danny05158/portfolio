@@ -1,14 +1,15 @@
 <template>
-        <WindowObserver
-         v-if="settings">
-            <FeedbacksManager>
-                    <LocationManager>
-                        <ModalManager>
-                            <Resume/>
-                        </ModalManager>
-                    </LocationManager>
-            </FeedbacksManager>
-        </WindowObserver>
+        <Analytics/>
+            <WindowObserver
+             v-if="settings">
+                <FeedbacksManager>
+                        <LocationManager>
+                            <ModalManager>
+                                <Resume/>
+                            </ModalManager>
+                        </LocationManager>
+                </FeedbacksManager>
+            </WindowObserver>
 </template>
 
 <script setup>
@@ -18,8 +19,9 @@ import LocationManager from "/src/vue/stack/LocationManager.vue"
 import ModalManager from "/src/vue/stack/ModalManager.vue"
 import WindowObserver from "/src/vue/stack/WindowObserver.vue"
 import Resume from "/src/vue/stack/Resume.vue"
-import { useDataManagerStore } from "../../stores/DataManager"
+import { Analytics } from "@vercel/analytics/vue"
 
+import { useDataManagerStore } from "../../stores/DataManager"
 const dataManagerStore = useDataManagerStore()
 
 const settings = computed(() => {
