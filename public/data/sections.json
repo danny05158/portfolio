@@ -8,10 +8,10 @@
             "type": "centered",
             "locales": {
                 "en": {
-                    "title": "Hello, I'm Daniel. I am a software engineer.",
-                    "title_short": "Hello, I'm Daniel. I am a software engineer.",
+                    "title": "Hello, I'm Daniel 👋",
+                    "title_short": "Hello, I'm Daniel 👋",
                     "description": null,
-                    "nav_label": "Contact"
+                    "nav_label": "About"
                 }
             }
         },
