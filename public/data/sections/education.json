@@ -20,7 +20,7 @@
                     "locales": {
                         "en": {
                             "title": "Fullstack Academy of Code",
-                            "description": "Completed Engineering program covering: Javascript, React/Redux, Sequelize ORM, HTML, CSS and testing frameworks Mocha/Chai.",
+                            "description": "Completed software engineering immersive program. Curriculum focused on JavaScript, React, Redux, Node.js, Express, and PostgreSQL",
                             "country": "US",
                             "institution": "Fullstack Academy of Code",
                             "tags": []
