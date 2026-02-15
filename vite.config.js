@@ -8,6 +8,11 @@ export default defineConfig({
     server:{
       watch: {
         usePolling: true
+      },
+      hmr: {
+        protocol: 'ws',
+        host: 'localhost',
+        port: 5173
       }
     },
     plugins: [

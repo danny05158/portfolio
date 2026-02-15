@@ -87,7 +87,23 @@
                     "locales": {
                         "en": {
                             "title": "Jest",
-                            "description": "Maintain a commitment to code quality by writing unit tests using the Jest framework.",
+                            "description": "Maintain a commitment to code quality by writing unit and integration tests.",
+                            "level": null
+                        }
+                    }
+                },
+
+                {
+                    "id": 3,
+                    "dateStart": null,
+                    "img": null,
+                    "fallbackFaIcon": "fa-brands fa-github-alt",
+                    "fallbackFaIconColor": null,
+                    "percentage": null,
+                    "locales": {
+                        "en": {
+                            "title": "GitHub Copilot",
+                            "description": "AI-assisted development to accelerate feature deliveries.",
                             "level": null
                         }
                     }
