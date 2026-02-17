@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import {inject, provide, ref, watch, computed, onMounted} from "vue"
+import {provide, ref, watch, computed, onMounted} from "vue"
 import ActivitySpinner from "/src/vue/components/loaders/ActivitySpinner.vue"
 import Loader from "/src/vue/components/loaders/Loader.vue"
 import {useUtils} from "/src/composables/utils.js"

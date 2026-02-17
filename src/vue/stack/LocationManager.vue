@@ -14,16 +14,10 @@ const languageManagerStore = useLanguageManagerStore()
 const constants = useConstants()
 const scheduler = useScheduler()
 
-/** @type {{value: Boolean}} */
-// const didLoadAllJsonFiles = inject("didLoadAllJsonFiles")
-
-/** @type {{value: String}} */
 const windowHash = inject("windowHash")
 
-/** @type {{value: Boolean}} */
 const isDesktopLayout = inject("isDesktopLayout")
 
-/** @type {Function} */
 const setSpinnerEnabled = inject("setSpinnerEnabled")
 
 const localizeFromStrings = languageManagerStore.localizeFromStrings
@@ -34,6 +28,7 @@ const presentationMode = ref(constants.PresentationModes.NONE)
 const shouldResetScroll = ref(false)
 
 onMounted(() => _init())
+
 watch(() => dataManagerStore.didLoadAllJsonFiles, () => _init())
 watch(() => windowHash.value, () => _onHashChanged())
 watch(() => isDesktopLayout.value, () => _onViewportChanged(true))
@@ -47,9 +42,6 @@ const _init = () => {
     _onViewportChanged(false)
 }
 
-/**
- * @param {Section} section
- */
 const navigateToSection = (section) => {
     if(!section)
         return
@@ -61,10 +53,6 @@ const navigateToSection = (section) => {
     window.location.hash = section.urlHashId
 }
 
-/**
- * @param {Category} category
- * @return {Section}
- */
 const navigateToCategory = (category) => {
     const targetSection = category.lastVisitedSection || category.sections[0]
     navigateToSection(targetSection)
