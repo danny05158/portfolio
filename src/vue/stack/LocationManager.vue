@@ -4,6 +4,7 @@
 
 <script setup>
 import {inject, onMounted, provide, ref, watch} from "vue"
+import {useRoute, useRouter} from "vue-router"
 import {useScheduler} from "/src/composables/scheduler.js"
 import {useConstants} from "/src/composables/constants.js"
 import { useDataManagerStore } from "../../stores/DataManager"
@@ -13,8 +14,8 @@ const dataManagerStore = useDataManagerStore()
 const languageManagerStore = useLanguageManagerStore()
 const constants = useConstants()
 const scheduler = useScheduler()
-
-const windowHash = inject("windowHash")
+const router = useRouter()
+const route = useRoute()
 
 const isDesktopLayout = inject("isDesktopLayout")
 
@@ -30,13 +31,13 @@ const shouldResetScroll = ref(false)
 onMounted(() => _init())
 
 watch(() => dataManagerStore.didLoadAllJsonFiles, () => _init())
-watch(() => windowHash.value, () => _onHashChanged())
+watch(() => route.path, () => _onRouteChanged())
 watch(() => isDesktopLayout.value, () => _onViewportChanged(true))
 
 const _init = () => {
     scheduler.clearAllWithTag('navigation-manager-hash')
     scheduler.schedule(() => {
-        _onHashChanged()
+        _onRouteChanged()
     }, 30, 'navigation-manager-hash')
 
     _onViewportChanged(false)
@@ -46,11 +47,11 @@ const navigateToSection = (section) => {
     if(!section)
         return
 
-    if(window.location.hash === '#' + section.urlHashId)
+    if(route.path === '/' + section.urlHashId)
         return
 
     section.category.lastVisitedSection = section
-    window.location.hash = section.urlHashId
+    router.push('/' + section.urlHashId)
 }
 
 const navigateToCategory = (category) => {
@@ -65,12 +66,12 @@ const scrollToTopOfCurrentSection = () => {
     }, 100)
 }
 
-const _onHashChanged = () => {
+const _onRouteChanged = () => {
     if(!dataManagerStore.didLoadAllJsonFiles)
         return
 
-    const hash = window.location.hash.replace('#', '')
-    const targetSection = dataManagerStore.sections.find((section) => section.urlHashId === hash)
+    const sectionId = route.path.replace('/', '')
+    const targetSection = dataManagerStore.sections.find((section) => section.urlHashId === sectionId)
     if(!targetSection) {
         navigateToSection(dataManagerStore.sections[0])
         return

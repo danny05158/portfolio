@@ -15,24 +15,20 @@ const windowScrollY = ref(0)
 const windowHeight = ref(0)
 const windowWidth = ref(0)
 const lastKeyPressed = ref({id: null, count: -1})
-const windowHash = ref(null)
 const canScroll = ref(true)
 
 onMounted(() => {
     window.addEventListener('resize', _onResize)
     window.addEventListener('scroll', _onScroll)
     window.addEventListener('keydown', _onKeyDown)
-    window.addEventListener('hashchange', _onHashChange)
     _onResize()
     _onScroll()
-    _onHashChange()
 })
 
 onUnmounted(() => {
     window.removeEventListener('resize', _onResize)
     window.removeEventListener('scroll', _onScroll)
     window.removeEventListener('keydown', _onKeyDown)
-    window.removeEventListener('hashchange', _onHashChange)
 })
 
 watch(() => canScroll.value, () => {
@@ -92,16 +88,11 @@ const _onKeyDown = (e) => {
     }
 }
 
-const _onHashChange = () => {
-    windowHash.value = window.location.hash
-}
-
 provide("windowScrollX", windowScrollX)
 provide("windowScrollY", windowScrollY)
 provide("windowHeight", windowHeight)
 provide("windowWidth", windowWidth)
 provide("windowWidth", windowWidth)
-provide("windowHash", windowHash)
 provide("lastKeyPressed", lastKeyPressed)
 provide("isDesktopLayout", isDesktopLayout)
 provide("isMobileLayout", isMobileLayout)
