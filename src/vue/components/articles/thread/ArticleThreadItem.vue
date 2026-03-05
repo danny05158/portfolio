@@ -37,13 +37,15 @@
     </li>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {computed, inject} from "vue"
 import InfoBadge from "/src/vue/components/widgets/InfoBadge.vue"
 import InlineInfoList from "/src/vue/components/widgets/InlineInfoList.vue"
 import ArticleWidgetLinkList from "/src/vue/components/articles/base/ArticleWidgetLinkList.vue"
 import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
 const languageManagerStore = useLanguageManagerStore()
+
+const localize = languageManagerStore.localize
 
 const props = defineProps({
     item: {

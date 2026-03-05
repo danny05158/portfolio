@@ -3,10 +3,8 @@
  * Hub for defining app constants.
  */
 export function useConstants() {
-    /** @type {string} */
-    const BASE_URL = import.meta.env.BASE_URL
+    const BASE_URL: string = import.meta.env.BASE_URL
 
-    /** @const **/
     const BOOTSTRAP_BREAKPOINTS = {
         xs: 0,
         sm: 576,
@@ -14,20 +12,17 @@ export function useConstants() {
         lg: 992,
         xl: 1200,
         xxl: 1400,
-    }
+    } as const
 
-    /** @type {number} */
-    const NAV_SECTION_PICKER_HEIGHT = 50
+    const NAV_SECTION_PICKER_HEIGHT: number = 50
 
-    /** @type {number} */
-    const NAV_SECTION_PICKER_COMPRESSED_HEIGHT = 45
+    const NAV_SECTION_PICKER_COMPRESSED_HEIGHT: number = 45
 
-    /** @enum **/
     const PresentationModes = {
         ONE_AT_ONCE: "mode_one_at_once",
         ALL_AT_ONCE: "mode_all_at_once",
         NONE: "mode_none"
-    }
+    } as const
 
     return {
         // Global Constants...

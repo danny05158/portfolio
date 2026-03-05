@@ -18,7 +18,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import ImageView from "/src/vue/components/widgets/ImageView.vue"
 import NavToggleButton from "/src/vue/components/navigation/layout/NavToggleButton.vue"
 

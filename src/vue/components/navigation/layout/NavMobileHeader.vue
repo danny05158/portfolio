@@ -13,7 +13,7 @@
     </nav>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {computed, inject} from "vue"
 import NavProfileCard from "/src/vue/components/navigation/layout/NavProfileCard.vue"
 import LanguagePicker from "/src/vue/components/widgets/LanguagePicker.vue"

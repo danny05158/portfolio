@@ -25,7 +25,7 @@
     </Article>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {computed} from "vue"
 import Article from "/src/vue/components/articles/base/Article.vue"
 import ArticleSkillsItem from "/src/vue/components/articles/skills/ArticleSkillsItem.vue"

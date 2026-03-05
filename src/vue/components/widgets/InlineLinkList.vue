@@ -9,13 +9,14 @@
     </ul>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import {type PropType} from "vue"
 import {inject} from "vue"
 import { useLanguageManagerStore } from "../../../stores/LanguageManager"
 const languageManagerStore = useLanguageManagerStore()
 
 const props = defineProps({
-    items: Array,
+    items: Array as PropType<any[]>,
 })
 
 /** @type {Function} */

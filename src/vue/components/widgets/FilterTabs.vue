@@ -18,9 +18,10 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import {type PropType} from "vue"
 const props = defineProps({
-    categories: Array,
+    categories: Array as PropType<any[]>,
     selectedCategoryId: String
 })
 

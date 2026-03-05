@@ -2,10 +2,14 @@ import { useDataManagerStore } from "./DataManager"
 import {computed} from "vue"
 import { defineStore } from "pinia"
 
+interface HasTranslation {
+    getTranslation: (key: string, language?: { id: string }, fallbackLanguage?: { id: string }) => string
+}
+
 export const useLanguageManagerStore = defineStore("languageManager", () => {
   const dataManagerStore = useDataManagerStore()
 
-  const supportedLanguages = dataManagerStore.settings.supportedLanguages
+  const supportedLanguages = dataManagerStore.settings!.supportedLanguages
 
   const defaultLanguage = computed(() => {
     return supportedLanguages.find((language) => language.isDefault);
@@ -30,7 +34,7 @@ export const useLanguageManagerStore = defineStore("languageManager", () => {
     )
   })
 
-  function localizeDate(dateOrString) {
+  function localizeDate(dateOrString: Date | string | null): string {
     if (!dateOrString) return "date.null";
 
     if (typeof dateOrString === "string")
@@ -52,7 +56,7 @@ export const useLanguageManagerStore = defineStore("languageManager", () => {
     );
   }
 
-  function localize(locales, key, returnNullIfNotFound) {
+  function localize(locales: HasTranslation | null, key: string, returnNullIfNotFound?: boolean): string | null {
     if (!locales) return "";
 
     const translation = locales.getTranslation(
@@ -66,7 +70,7 @@ export const useLanguageManagerStore = defineStore("languageManager", () => {
     return returnNullIfNotFound ? null : translation;
   }
 
-  function localizeFromStrings(key) {
+  function localizeFromStrings(key: string): string | null {
     const { strings } = useDataManagerStore();
     return localize(strings, key);
   }

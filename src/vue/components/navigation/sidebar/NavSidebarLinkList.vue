@@ -20,7 +20,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {inject, ref, watch} from "vue"
 import {useScheduler} from "/src/composables/scheduler.js"
 import {useUtils} from "/src/composables/utils.js"

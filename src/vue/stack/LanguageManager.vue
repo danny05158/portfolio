@@ -2,7 +2,7 @@
     <slot v-if="selectedLanguage"/>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {onMounted, provide, ref, computed} from "vue"
 import { useDataManagerStore } from "../../stores/DataManager"
 
@@ -35,7 +35,7 @@ const defaultLanguage = computed(() => {
  * @param {String} key
  * @param {Boolean} [returnNullIfNotFound=false]
  */
-const localize = (locales, key, returnNullIfNotFound) => {
+const localize = (locales, key, returnNullIfNotFound?) => {
     if(!locales)
         return ''
 

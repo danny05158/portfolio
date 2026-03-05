@@ -1,13 +1,13 @@
 <template>
     <button class="btn btn-primary btn-xl"
-            :type="props.type || 'button'"
+            :type="(props.type || 'button') as 'button' | 'submit' | 'reset'"
             :class="props.class">
         <i class="me-2" :class="props.icon"/>
         <span v-html="props.label"/>
     </button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const props = defineProps({
     class: String,
     label: String,

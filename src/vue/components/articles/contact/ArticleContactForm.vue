@@ -17,7 +17,7 @@
     </Article>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {computed, inject, onMounted, ref} from "vue"
 import {useEmails} from "/src/composables/emails.js"
 import {useUtils} from "/src/composables/utils.js"
@@ -39,13 +39,13 @@ const props = defineProps({
 })
 
 /** @type {Function} */
-const setSpinnerEnabled = inject("setSpinnerEnabled")
+const setSpinnerEnabled = inject<(enabled: boolean, message?: string) => void>("setSpinnerEnabled")
 
 const localize = languageManagerStore.localize
 const localizeFromStrings = languageManagerStore.localizeFromStrings
 
 /** @type {Function} */
-const scrollToTopOfCurrentSection = inject("scrollToTopOfCurrentSection")
+const scrollToTopOfCurrentSection = inject<() => void>("scrollToTopOfCurrentSection")
 
 const name = ref("")
 const email = ref("")

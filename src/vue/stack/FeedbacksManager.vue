@@ -12,7 +12,7 @@
     <slot v-if="didMountPreloader"/>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {provide, ref, watch, computed, onMounted} from "vue"
 import ActivitySpinner from "/src/vue/components/loaders/ActivitySpinner.vue"
 import Loader from "/src/vue/components/loaders/Loader.vue"
@@ -27,7 +27,7 @@ const preloaderEnabled = computed(() => {
 })
 
 onMounted(() => {
-    didMountPreloader.value = !settings.value.preloaderEnabled
+    didMountPreloader.value = !settings.value?.preloaderEnabled
 })
 
 const didMountPreloader = ref(false)
@@ -47,7 +47,7 @@ const setSpinnerEnabled = (enabled, message) => {
 }
 
 const settings = computed(() => {
-    return dataManagerStore?.settings || {}
+    return dataManagerStore?.settings
 })
 
 watch(() => loaderActive.value, () => {

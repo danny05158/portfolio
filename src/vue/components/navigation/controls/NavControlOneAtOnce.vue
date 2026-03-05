@@ -1,11 +1,13 @@
 <template>
 </template>
 
-<script setup>
-import {computed, inject, onBeforeMount, onMounted, watch} from "vue"
+<script setup lang="ts">
+import {computed, inject, onBeforeMount, onMounted, watch, type Ref, type ComputedRef} from "vue"
 import {useConstants} from "/src/composables/constants.js"
 import { useDataManagerStore } from "../../../../stores/DataManager"
 import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
+import type Category from "/src/models/Category"
+import type Section from "/src/models/Section"
 
 
 const constants = useConstants()
@@ -13,22 +15,22 @@ const dataManagerStore = useDataManagerStore()
 const languageManagerStore = useLanguageManagerStore()
 
 /** @type {{value: Section}} */
-const previousSection = inject("previousSection")
+const previousSection = inject<Ref<Section | null>>("previousSection")
 
 /** @type {{value: Section}} */
-const currentSection = inject("currentSection")
+const currentSection = inject<Ref<Section | null>>("currentSection")
 
 /** @type {{value: Boolean}} */
-const shouldResetScroll = inject("shouldResetScroll")
+const shouldResetScroll = inject<Ref<boolean>>("shouldResetScroll")
 
 /** @type {Function} */
-const navigateToSection = inject("navigateToSection")
+const navigateToSection = inject<(section: Section) => void>("navigateToSection")
 
 /** @type {Function} */
-const navigateToCategory = inject("navigateToCategory")
+const navigateToCategory = inject<(category: Category) => void>("navigateToCategory")
 
 /** @type {{value: Boolean}} */
-const isDesktopLayout = inject("isDesktopLayout")
+const isDesktopLayout = inject<ComputedRef<boolean>>("isDesktopLayout")
 
 /** @type {{value: Language}} */
 const selectedLanguage = languageManagerStore.selectedLanguage

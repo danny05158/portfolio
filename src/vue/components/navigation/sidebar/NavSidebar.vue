@@ -21,8 +21,8 @@
     </nav>
 </template>
 
-<script setup>
-import {inject, watch, computed} from "vue"
+<script setup lang="ts">
+import {inject, watch, computed, type Ref} from "vue"
 import NavProfileCard from "/src/vue/components/navigation/layout/NavProfileCard.vue"
 import NavSidebarLinkList from "/src/vue/components/navigation/sidebar/NavSidebarLinkList.vue"
 import NavSidebarFooter from "/src/vue/components/navigation/sidebar/NavSidebarFooter.vue"
@@ -47,7 +47,7 @@ const emit = defineEmits(['toggle', 'select'])
 const localize = languageManagerStore.localize
 
 /** @type {{value: Object}} */
-const lastKeyPressed = inject("lastKeyPressed")
+const lastKeyPressed = inject<Ref<{id: string | null, count: number}>>("lastKeyPressed")
 
 const profile = computed(() => {
     return dataManagerStore.profile
@@ -62,7 +62,7 @@ const settings = computed(() => {
 })
 
 watch(() => lastKeyPressed.value, () => {
-    if(!settings.navToggleEnabled)
+    if(!settings.value?.navToggleEnabled)
         return
 
     if(lastKeyPressed.value.id === "ArrowLeft")

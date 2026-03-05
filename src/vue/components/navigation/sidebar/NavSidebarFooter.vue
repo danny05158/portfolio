@@ -10,7 +10,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import LanguagePicker from "/src/vue/components/widgets/LanguagePicker.vue"
 
 const props = defineProps({

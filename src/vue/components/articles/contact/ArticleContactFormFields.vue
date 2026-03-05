@@ -58,7 +58,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {inject, ref} from "vue"
 import Alert from "/src/vue/components/widgets/Alert.vue"
 import XLButton from "/src/vue/components/widgets/XLButton.vue"

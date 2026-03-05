@@ -18,13 +18,13 @@
     </div>
 </template>
 
-<script setup>
-import {computed, inject} from "vue"
+<script setup lang="ts">
+import {computed, inject, type PropType} from "vue"
 import { useLanguageManagerStore } from "../../../stores/LanguageManager"
 const languageManagerStore = useLanguageManagerStore()
 
 const props = defineProps({
-    items: Array,
+    items: Array as PropType<any[]>,
     size: String,
     variant: String,
     class: String

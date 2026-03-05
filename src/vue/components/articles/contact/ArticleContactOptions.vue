@@ -5,7 +5,7 @@
     </Article>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {computed, inject} from "vue"
 import Article from "/src/vue/components/articles/base/Article.vue"
 import OptionsList from "/src/vue/components/widgets/OptionsList.vue"

@@ -11,7 +11,7 @@
     </Article>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Article from "/src/vue/components/articles/base/Article.vue"
 import ArticleTimelineItem from "/src/vue/components/articles/timeline/ArticleTimelineItem.vue"
 

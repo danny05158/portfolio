@@ -12,7 +12,7 @@
             </WindowObserver>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from "vue"
 import FeedbacksManager from "/src/vue/stack/FeedbacksManager.vue"
 import LocationManager from "/src/vue/stack/LocationManager.vue"

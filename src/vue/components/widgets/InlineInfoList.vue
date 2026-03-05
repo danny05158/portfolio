@@ -8,9 +8,10 @@
     </ul>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import {type PropType} from "vue"
 const props = defineProps({
-    items: Array
+    items: Array as PropType<any[]>
 })
 </script>
 

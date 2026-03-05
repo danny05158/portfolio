@@ -37,8 +37,8 @@
     </div>
 </template>
 
-<script setup>
-import {computed, inject} from "vue"
+<script setup lang="ts">
+import {computed, inject, type Ref, type ComputedRef} from "vue"
 import InlineInfoList from "/src/vue/components/widgets/InlineInfoList.vue"
 import InfoBadge from "/src/vue/components/widgets/InfoBadge.vue"
 import Tags from "/src/vue/components/widgets/Tags.vue"
@@ -51,12 +51,12 @@ const props = defineProps({
     country: String,
     institution: String,
     description: String,
-    list: Object|null,
-    tags: Object|String
+    list: Object,
+    tags: [Object, String]
 })
 
 /** @type {{value: Boolean}} */
-const isScreenXlOrLarger = inject("isScreenXlOrLarger")
+const isScreenXlOrLarger = inject<ComputedRef<boolean>>("isScreenXlOrLarger")
 
 const parsedTags = computed(() => {
     if(Array.isArray(props.tags))

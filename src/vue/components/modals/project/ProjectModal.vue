@@ -22,7 +22,7 @@
     </Modal>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Modal from "/src/vue/components/modals/base/Modal.vue"
 import IconView from "/src/vue/components/widgets/IconView.vue"
 import ProjectModalContent from "/src/vue/components/modals/project/ProjectModalContent.vue"

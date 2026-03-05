@@ -34,7 +34,7 @@
     </Article>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {inject} from "vue"
 import Alert from "/src/vue/components/widgets/Alert.vue"
 import Article from "/src/vue/components/articles/base/Article.vue"

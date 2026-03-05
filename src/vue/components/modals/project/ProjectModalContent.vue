@@ -35,7 +35,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {computed, inject} from "vue"
 import Tags from "/src/vue/components/widgets/Tags.vue"
 import SocialLinks from "/src/vue/components/widgets/SocialLinks.vue"

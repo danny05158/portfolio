@@ -2,7 +2,7 @@
     <slot/>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {computed, onMounted, onUnmounted, provide, ref, watch} from "vue"
 import {useConstants} from "/src/composables/constants.js"
 import {useUtils} from "/src/composables/utils.js"

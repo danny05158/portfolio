@@ -5,7 +5,7 @@
                   @close="_onProjectModalClosed"/>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import ProjectModal from "/src/vue/components/modals/project/ProjectModal.vue"
 import {provide, ref} from "vue"
 

@@ -12,7 +12,7 @@
     </Article>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Article from "/src/vue/components/articles/base/Article.vue"
 import ArticleThreadItem from "/src/vue/components/articles/thread/ArticleThreadItem.vue"
 

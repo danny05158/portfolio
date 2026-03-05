@@ -1,7 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import App from '/src/vue/stack/App.vue'
 
-const routes = [
+const routes: RouteRecordRaw[] = [
   { path: '/', redirect: '/about' },
   { path: '/about',     name: 'about',     component: App },
   { path: '/education', name: 'education', component: App },

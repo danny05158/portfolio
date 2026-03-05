@@ -44,8 +44,8 @@
     </div>
 </template>
 
-<script setup>
-import {computed, inject, ref} from "vue"
+<script setup lang="ts">
+import {computed, inject, ref, type Ref} from "vue"
 import {useConstants} from "/src/composables/constants.js"
 import NavMobileHeader from "/src/vue/components/navigation/layout/NavMobileHeader.vue"
 import NavControlOneAtOnce from "/src/vue/components/navigation/controls/NavControlOneAtOnce.vue"
@@ -58,7 +58,7 @@ import NavPillsControllerFixed from "/src/vue/components/navigation/tabs/NavPill
 const constants = useConstants()
 
 /** @type {{value: String}} */
-const presentationMode = inject("presentationMode")
+const presentationMode = inject<Ref<string>>("presentationMode")
 
 const navControlOneAtOnce = ref(null)
 const navControlAllAtOnce = ref(null)

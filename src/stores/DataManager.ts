@@ -1,22 +1,22 @@
 import { ref } from "vue";
 import { defineStore } from "pinia";
-import { useUtils } from "../composables/utils";
-import Category from "../models/Category";
-import Locales from "../models/Locales.js";
-import Profile from "../models/Profile.js";
-import Section from "../models/Section.js";
-import Settings from "../models/Settings.js";
+import { useUtils } from "/src/composables/utils";
+import Category from "/src/models/Category";
+import Locales from "/src/models/Locales";
+import Profile from "/src/models/Profile";
+import Section from "/src/models/Section";
+import Settings from "/src/models/Settings";
 
 export const useDataManagerStore = defineStore("dataManager", () => {
-  const categories = ref(null);
-  const profile = ref(null);
-  const sections = ref(null);
-  const settings = ref(null);
-  const strings = ref(null);
+  const categories = ref<Category[] | null>(null);
+  const profile = ref<Profile | null>(null);
+  const sections = ref<Section[] | null>(null);
+  const settings = ref<Settings | null>(null);
+  const strings = ref<Locales | null>(null);
   const didLoadAllJsonFiles = ref(false);
-  const languageId = ref(null);
+  const languageId = ref<string | null>(null);
 
-  const loadData = async () => {
+  const loadData = async (): Promise<void> => {
     const jSettings = await loadJson("/settings.json");
     settings.value = new Settings(jSettings);
 
@@ -30,35 +30,35 @@ export const useDataManagerStore = defineStore("dataManager", () => {
     const jCategories = await loadJson("/categories.json");
 
     parseSectionsAndCategories(
-      jSections["sections"],
-      jCategories["categories"]
+      jSections["sections"] as Record<string, unknown>[],
+      jCategories["categories"] as Record<string, unknown>[]
     );
     validateSectionsAndCategories();
     await loadSectionJsonFiles();
     didLoadAllJsonFiles.value = true;
   };
 
-  const parseSectionsAndCategories = (sectionsList, categoriesList) => {
-    const parsedSections = [];
-    const parsedCategories = [];
+  const parseSectionsAndCategories = (sectionsList: Record<string, unknown>[], categoriesList: Record<string, unknown>[]): void => {
+    const parsedSections: Section[] = [];
+    const parsedCategories: Category[] = [];
 
     for (const categoryListItem of categoriesList) {
       const category = new Category(
-        categoryListItem["id"],
-        categoryListItem["faIcon"],
-        categoryListItem["locales"]
+        categoryListItem["id"] as string,
+        categoryListItem["faIcon"] as string,
+        categoryListItem["locales"] as Record<string, unknown>
       );
       parsedCategories.push(category);
     }
 
     for (const sectionsListItem of sectionsList) {
       const section = new Section(
-        sectionsListItem["id"],
+        sectionsListItem["id"] as string,
         parsedSections.length === 0,
-        sectionsListItem["faIcon"],
-        sectionsListItem["jsonPath"],
-        sectionsListItem["type"],
-        sectionsListItem["locales"]
+        sectionsListItem["faIcon"] as string,
+        sectionsListItem["jsonPath"] as string,
+        sectionsListItem["type"] as string,
+        sectionsListItem["locales"] as Record<string, unknown>
       );
 
       const sectionCategory = parsedCategories.find(
@@ -81,40 +81,41 @@ export const useDataManagerStore = defineStore("dataManager", () => {
     );
   };
 
-  const validateSectionsAndCategories = () => {
+  const validateSectionsAndCategories = (): void => {
     const utils = useUtils();
 
-    if (utils.hasDuplications(sections.value, "id")) {
+    if (utils.hasDuplications(sections.value as Record<string, unknown>[], "id")) {
       throw new Error("Each section must have an unique id!");
     }
 
-    if (utils.hasDuplications(categories.value, "id")) {
+    if (utils.hasDuplications(categories.value as Record<string, unknown>[], "id")) {
       throw new Error("Each category must have an unique id!");
     }
   };
 
-  const loadSectionJsonFiles = async () => {
-    for (const section of sections.value) {
+  const loadSectionJsonFiles = async (): Promise<void> => {
+    for (const section of sections.value!) {
       const path = section.jsonPath;
       if (!path) continue;
 
       const json = await loadJson(path);
-      const articles = json["articles"];
+      const articles = json["articles"] as Record<string, unknown>[];
       if (!articles) {
         throw new Error(`${path} doesn't have an articles array.`);
       }
 
-      section.articles = articles;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (section as any).articles = articles;
     }
   };
 
-  const loadJson = async (path) => {
+  const loadJson = async (path: string): Promise<Record<string, unknown>> => {
     const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 
     try {
       const response = await fetch(basePath + "/data/" + path);
       return await response.json();
-    } catch (e) {
+    } catch (_e) {
       throw new Error(
         `Couldn't load ${path}. Make sure the file exists and is a valid JSON object.`
       );

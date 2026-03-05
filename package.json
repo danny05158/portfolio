@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist",
     "resume:clear": "node npm/npm-resume-clear.js",
-    "lint": "eslint src/**/*.{js,vue}",
-    "lint:fix": "eslint src/**/*.{js,vue} --fix"
+    "type-check": "vue-tsc --noEmit",
+    "lint": "eslint src/**/*.{ts,vue}",
+    "lint:fix": "eslint src/**/*.{ts,vue} --fix"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -31,11 +32,15 @@
   "devDependencies": {
     "@eslint/js": "^9.39.2",
     "@vitejs/plugin-vue": "^5.2.3",
+    "@vue/tsconfig": "^0.9.0",
     "eslint": "^9.39.2",
     "eslint-plugin-vue": "^10.7.0",
     "sass": "^1.62.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1",
     "vite": "^6.2.5",
     "vite-plugin-eslint": "^1.8.1",
-    "vite-plugin-vue-devtools": "^8.0.5"
+    "vite-plugin-vue-devtools": "^8.0.5",
+    "vue-tsc": "^3.2.5"
   }
 }

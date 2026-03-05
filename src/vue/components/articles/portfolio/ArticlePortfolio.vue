@@ -20,7 +20,7 @@
     </Article>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {computed, inject, onMounted, ref} from "vue"
 import Article from "/src/vue/components/articles/base/Article.vue"
 import FilterTabs from "/src/vue/components/widgets/FilterTabs.vue"
@@ -43,7 +43,7 @@ const selectedCategoryId = ref(defaultCategoryId)
 const refreshTimes = ref(0)
 
 const items = computed(() => {
-    return props.model.items
+    return props.model.items as any[]
 })
 
 const filteredItems = computed(() => {

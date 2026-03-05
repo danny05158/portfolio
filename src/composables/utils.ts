@@ -2,71 +2,45 @@
  * Created by Ryan Balieiro on 08.26.2023
  * This composable will implement helper functions that can be used by multiple components within the architecture.
  */
-import {useConstants} from "/src/composables/constants.js"
+import {useConstants} from "/src/composables/constants"
 
 const constants = useConstants()
 
 export function useUtils() {
-    /**
-     * @param {Number} value
-     * @param {Number} min
-     * @param {Number} max
-     * @return {number}
-     */
-    const clamp = (value, min, max) => {
+    const clamp = (value: number, min: number, max: number): number => {
         if(isNaN(Number(value)) || value === null || value === undefined)
             return min
 
         return Math.min(Math.max(value, min), max)
     }
 
-    /**
-     * @Boolean
-     */
-    const isAndroid = () => {
+    const isAndroid = (): boolean => {
         const userAgent = window.navigator.userAgent.toLowerCase();
         return /android/.test(userAgent);
     }
 
-    /**
-     * @return {boolean}
-     */
-    const isIOS = () => {
+    const isIOS = (): boolean => {
         const userAgent = window.navigator.userAgent.toLowerCase()
         return /iphone|ipad|ipod/.test(userAgent)
             || /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
     }
 
-    /**
-     * @return {boolean}
-     */
-    const isChromeOS = () => {
+    const isChromeOS = (): boolean => {
         const userAgent = window.navigator.userAgent.toLowerCase()
         return /cros/.test(userAgent);
     }
 
-    /**
-     * @param {String} string
-     * @return {boolean}
-     */
-    const isStringAnImageUrl = (string) => {
+    const isStringAnImageUrl = (string: string): boolean => {
         return /\.(jpg|jpeg|png|gif|bmp|svg)$/i.test(string)
     }
 
-    /**
-     * @return {boolean}
-     */
-    const isTouchDevice = () => {
+    const isTouchDevice = (): boolean => {
         return (('ontouchstart' in window) ||
             (navigator.maxTouchPoints > 0) ||
             (navigator.msMaxTouchPoints > 0))
     }
 
-    /**
-     * @param {String} string
-     * @return {boolean}
-     */
-    const isValidEmail = (string) => {
+    const isValidEmail = (string: string): boolean => {
         return Boolean(String(string)
             .toLowerCase()
             .match(
@@ -74,11 +48,7 @@ export function useUtils() {
             ))
     }
 
-    /**
-     * @param {HTMLElement} element
-     * @return {boolean}
-     */
-    const isElementOutsideBounds = (element) => {
+    const isElementOutsideBounds = (element: HTMLElement): boolean => {
         const rect = element.getBoundingClientRect()
 
         return (
@@ -89,12 +59,7 @@ export function useUtils() {
         )
     }
 
-    /**
-     * @param {Array} array
-     * @param {string} key
-     * @return {boolean}
-     */
-    const hasDuplications = (array, key) => {
+    const hasDuplications = (array: Record<string, unknown>[], key: string): boolean => {
         const seen = new Set()
         for (const item of array) {
             if (seen.has(item[key])) return true
@@ -103,52 +68,36 @@ export function useUtils() {
         return false
     }
 
-    /** @return {string} */
-    const getRootSCSSVariable = (colorName) => {
+    const getRootSCSSVariable = (colorName: string): string => {
         const root = document.documentElement
         return getComputedStyle(root).getPropertyValue('--' + colorName).trim()
     }
 
-    /** @return {Number} **/
-    const getYearsPassedSince = (date) => {
+    const getYearsPassedSince = (date: Date): number => {
         const currentDate = new Date()
-        const differenceInMilliseconds = currentDate - date
+        const differenceInMilliseconds = currentDate.getTime() - date.getTime()
         const millisecondsPerYear = 365.25 * 24 * 60 * 60 * 1000
         return differenceInMilliseconds / millisecondsPerYear
     }
 
-    /**
-     * @param {String} [prefix]
-     * @return {string}
-     */
-    const generateUniqueRandomString = (prefix) => {
+    const generateUniqueRandomString = (prefix?: string): string => {
         prefix = prefix || 'key'
         window.randStrGenCount = window.randStrGenCount || 0
         window.randStrGenCount++
         return prefix + "-rand-" + window.randStrGenCount
     }
 
-    /**
-     * @param {String} path
-     * @return {String}
-     */
-    const resolvePath = (path) => {
+    const resolvePath = (path: string): string => {
         const baseUrl = constants.BASE_URL || ''
         return baseUrl + path
     }
 
-    /**
-     * @return {string}
-     */
-    const getAbsoluteLocation = () => {
+    const getAbsoluteLocation = (): string => {
         const { protocol, host, pathname, search, hash } = window.location
         return `${protocol}//${host}${pathname}${search}${hash}`
     }
 
-    /**
-     * @return {string}
-     */
-    const getRootLocation = () => {
+    const getRootLocation = (): string => {
         const { protocol, host } = window.location
         const basePath = import.meta.env.BASE_URL
         const path = `${protocol}//${host}${basePath}`

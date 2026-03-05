@@ -21,7 +21,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {computed, ref, watch} from "vue"
 import Spinner from "/src/vue/components/widgets/Spinner.vue"
 import {useUtils} from "/src/composables/utils.js"

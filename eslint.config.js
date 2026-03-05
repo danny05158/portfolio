@@ -1,12 +1,20 @@
 import js from '@eslint/js'
 import pluginVue from 'eslint-plugin-vue'
+import tseslint from 'typescript-eslint'
 
-export default [
-  {
-    ignores: ['node_modules', 'dist']
-  },
+export default tseslint.config(
+  { ignores: ['node_modules', 'dist'] },
   js.configs.recommended,
   ...pluginVue.configs['flat/recommended'],
+  ...tseslint.configs.recommended,
+  {
+    files: ['**/*.vue'],
+    languageOptions: {
+      parserOptions: {
+        parser: tseslint.parser
+      }
+    }
+  },
   {
     languageOptions: {
       globals: {
@@ -24,12 +32,14 @@ export default [
       }
     },
     rules: {
-      'no-unused-vars': ['warn', {
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': ['warn', {
         args: 'after-used',
         argsIgnorePattern: '^_',
         caughtErrors: 'all',
         caughtErrorsIgnorePattern: '^_'
-      }]
+      }],
+      '@typescript-eslint/no-explicit-any': 'warn'
     }
   }
-]
+)

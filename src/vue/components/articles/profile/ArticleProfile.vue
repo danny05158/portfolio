@@ -18,8 +18,8 @@
     </Article>
 </template>
 
-<script setup>
-import {computed, inject} from "vue"
+<script setup lang="ts">
+import {computed, inject, type Ref, type ComputedRef} from "vue"
 import Article from "/src/vue/components/articles/base/Article.vue"
 import ArticleProfileItem from "/src/vue/components/articles/profile/ArticleProfileItem.vue"
 import SocialLinks from "/src/vue/components/widgets/SocialLinks.vue"
@@ -41,7 +41,7 @@ const props = defineProps({
 
 
 /** @type {{value:Boolean}} */
-const isScreenXlOrLarger = inject("isScreenXlOrLarger")
+const isScreenXlOrLarger = inject<ComputedRef<boolean>>("isScreenXlOrLarger")
 
 const title = computed(() => {
     return localize(

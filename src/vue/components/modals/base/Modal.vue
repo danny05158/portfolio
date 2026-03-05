@@ -29,7 +29,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Modal from 'bootstrap/js/src/modal'
 import {onMounted, onUnmounted, ref, watch} from "vue"
 import FaButton from "/src/vue/components/widgets/FaButton.vue"
@@ -82,7 +82,7 @@ const _onVisibilityToggled = () => {
 const _onWillHide = () => {
     if(!document.activeElement)
         return
-    document.activeElement.blur()
+    ;(document.activeElement as HTMLElement).blur()
 }
 
 const _onHidden = () => {

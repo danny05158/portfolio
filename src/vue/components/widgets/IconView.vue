@@ -16,7 +16,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import ImageView from "/src/vue/components/widgets/ImageView.vue"
 import {computed, ref} from "vue"
 import {useUtils} from "/src/composables/utils.js"

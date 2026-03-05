@@ -5,11 +5,11 @@
     </button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const props = defineProps({
     faIcon: String,
     variant: String,
-    size: String|Number,
+    size: [String, Number],
 })
 </script>
 

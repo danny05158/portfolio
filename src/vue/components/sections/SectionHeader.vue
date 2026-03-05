@@ -10,8 +10,8 @@
     </div>
 </template>
 
-<script setup>
-import {computed, inject} from "vue"
+<script setup lang="ts">
+import {computed, inject, type Ref, type ComputedRef} from "vue"
 import SolidDivider from "/src/vue/components/widgets/SolidDivider.vue"
 import { useLanguageManagerStore } from "../../../stores/LanguageManager"
 const languageManagerStore = useLanguageManagerStore()
@@ -25,7 +25,7 @@ const props = defineProps({
 })
 
 /** @type {{value:Boolean}} */
-const isScreenXlOrLarger = inject("isScreenXlOrLarger")
+const isScreenXlOrLarger = inject<ComputedRef<boolean>>("isScreenXlOrLarger")
 
 const localize = languageManagerStore.localize
 

@@ -1,11 +1,12 @@
 <template>
 </template>
 
-<script setup>
-import {computed, inject, onMounted, ref, watch} from "vue"
+<script setup lang="ts">
+import {computed, inject, onMounted, ref, watch, type Ref, type ComputedRef} from "vue"
 import {useScheduler} from "/src/composables/scheduler.js"
 import { useDataManagerStore } from "../../../../stores/DataManager"
 import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
+import type Section from "/src/models/Section"
 
 
 const dataManagerStore = useDataManagerStore()
@@ -14,33 +15,33 @@ const languageManagerStore = useLanguageManagerStore()
 const scheduler = useScheduler()
 
 /** @type {{value: Section}} */
-const currentSection = inject("currentSection")
+const currentSection = inject<Ref<Section | null>>("currentSection")
 
 /** @type {{value: Section}} */
 const previousSection = inject("previousSection")
 
 /** @type {Function} */
-const navigateToSection = inject("navigateToSection")
+const navigateToSection = inject<(section: Section) => void>("navigateToSection")
 
 /** @type {{value: Boolean}} */
-const shouldResetScroll = inject("shouldResetScroll")
+const shouldResetScroll = inject<Ref<boolean>>("shouldResetScroll")
 
 /** @type {{value: Boolean}} */
-const isDesktopLayout = inject("isDesktopLayout")
+const isDesktopLayout = inject<ComputedRef<boolean>>("isDesktopLayout")
 
 /** @type {{value: Boolean}} */
-const windowScrollY = inject("windowScrollY")
+const windowScrollY = inject<Ref<number>>("windowScrollY")
 
 /** @type {{value: Boolean}} */
-const windowWidth = inject("windowWidth")
+const windowWidth = inject<Ref<number>>("windowWidth")
 
 /** @type {{value: Boolean}} */
-const windowHeight = inject("windowHeight")
+const windowHeight = inject<Ref<number>>("windowHeight")
 
 const selectedLanguage = languageManagerStore.selectedLanguage
 
 /** @type {{value: Boolean}} */
-const canScroll = inject("canScroll")
+const canScroll = inject<Ref<boolean>>("canScroll")
 
 const didInitialize = ref(false)
 const spyScrollSection = ref(null)

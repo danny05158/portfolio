@@ -10,9 +10,9 @@
                         }"/>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import NavPillsController from "/src/vue/components/navigation/tabs/NavPillsController.vue"
-import {computed, inject, onMounted, ref, watch} from "vue"
+import {computed, inject, onMounted, ref, watch, type Ref, type ComputedRef} from "vue"
 import {useUtils} from "/src/composables/utils.js"
 import {useScheduler} from "/src/composables/scheduler.js"
 
@@ -29,10 +29,10 @@ const props = defineProps({
 const emit = defineEmits(['select'])
 
 /** @type {{value: Number}} */
-const windowScrollY = inject("windowScrollY")
+const windowScrollY = inject<Ref<number>>("windowScrollY")
 
 /** @type {{value: Number}} */
-const isPortrait = inject("isPortrait")
+const isPortrait = inject<ComputedRef<boolean>>("isPortrait")
 
 const hidden = ref(true)
 const canTransition = ref(true)

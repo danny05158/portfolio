@@ -21,9 +21,10 @@ export default defineConfig({
     ],
     css: {
         preprocessorOptions: {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             scss: {
                 silenceDeprecations: ["mixed-decls", "color-functions", "global-builtin", "import"],
-            },
+            } as any,
         },
     }
 })

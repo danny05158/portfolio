@@ -16,12 +16,12 @@
                                     :country="localize(item.locales, 'country', true)"
                                     :institution="localize(item.locales, 'institution')"
                                     :description="localize(item.locales, 'description')"
-                                    :list="localize(item.locales, 'list', true)"
+                                    :list="(localize(item.locales, 'list', true) as any)"
                                     :tags="localize(props.item.locales, 'tags')"/>
     </li>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import IconView from "/src/vue/components/widgets/IconView.vue"
 import ArticleTimelineItemContent from "/src/vue/components/articles/timeline/ArticleTimelineItemContent.vue"
 import { useLanguageManagerStore } from "../../../../stores/LanguageManager"

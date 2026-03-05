@@ -16,9 +16,9 @@
     </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Section from "/src/models/Section.js"
-import {computed, inject} from "vue"
+import {computed, inject, type Ref, type ComputedRef} from "vue"
 import {useConstants} from "/src/composables/constants.js"
 import SectionHeader from "/src/vue/components/sections/SectionHeader.vue"
 import SectionBody from "/src/vue/components/sections/SectionBody.vue"
@@ -28,7 +28,7 @@ const constants = useConstants()
 const utils = useUtils()
 
 /** @type {{value:Boolean}} */
-const isMobileLayout = inject("isMobileLayout")
+const isMobileLayout = inject<ComputedRef<boolean>>("isMobileLayout")
 
 const props = defineProps({
     /** @type {Section} **/

@@ -59,7 +59,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {computed, inject} from "vue"
 import {useUtils} from "/src/composables/utils.js"
 import IconView from "/src/vue/components/widgets/IconView.vue"
@@ -98,9 +98,9 @@ const experienceTimeDisplay = computed(() => {
     const yearsDiff = utils.getYearsPassedSince(dateStart)
     const floorYearsDiff = Math.floor(yearsDiff)
     if(floorYearsDiff > 1)
-        return localizeFromStrings("experience_year_count_plural").replace("{x}", floorYearsDiff + "+")
+        return (localizeFromStrings("experience_year_count_plural") || "").replace("{x}", floorYearsDiff + "+")
     else if(floorYearsDiff === 1)
-        return localizeFromStrings("experience_year_count_singular").replace("{x}", floorYearsDiff)
+        return (localizeFromStrings("experience_year_count_singular") || "").replace("{x}", String(floorYearsDiff))
     else
         return localizeFromStrings("experience_year_count_less_than_one")
 

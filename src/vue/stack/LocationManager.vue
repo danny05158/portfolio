@@ -2,8 +2,8 @@
     <slot/>
 </template>
 
-<script setup>
-import {inject, onMounted, provide, ref, watch} from "vue"
+<script setup lang="ts">
+import {inject, onMounted, provide, ref, watch, type Ref, type ComputedRef} from "vue"
 import {useRoute, useRouter} from "vue-router"
 import {useScheduler} from "/src/composables/scheduler.js"
 import {useConstants} from "/src/composables/constants.js"
@@ -17,15 +17,15 @@ const scheduler = useScheduler()
 const router = useRouter()
 const route = useRoute()
 
-const isDesktopLayout = inject("isDesktopLayout")
+const isDesktopLayout = inject<ComputedRef<boolean>>("isDesktopLayout")
 
-const setSpinnerEnabled = inject("setSpinnerEnabled")
+const setSpinnerEnabled = inject<(enabled: boolean, message?: string) => void>("setSpinnerEnabled")
 
 const localizeFromStrings = languageManagerStore.localizeFromStrings
 
 const currentSection = ref(null)
 const previousSection = ref(null)
-const presentationMode = ref(constants.PresentationModes.NONE)
+const presentationMode = ref<string>(constants.PresentationModes.NONE)
 const shouldResetScroll = ref(false)
 
 onMounted(() => _init())

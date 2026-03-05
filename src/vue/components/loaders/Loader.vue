@@ -11,10 +11,7 @@
         <div class="resume-loader-content">
             <ImageView src="images/icons/resume.ico"
                        alt="Logo"
-                       class="image-view-logo"
-                       :class="{
-                          'image-view-logo-animated': currentStep >= Steps.ANIMATING_LOGO
-                       }"
+                       :class="`image-view-logo${currentStep >= Steps.ANIMATING_LOGO ? ' image-view-logo-animated' : ''}`"
                        @completed="_onLogoLoaded"
                        :spinner-enabled="false"
                        :resolve-path="true"/>
@@ -34,8 +31,8 @@
     </div>
 </template>
 
-<script setup>
-import {onMounted, watch, ref, inject} from "vue"
+<script setup lang="ts">
+import {onMounted, watch, ref, inject, type Ref} from "vue"
 import {useScheduler} from "/src/composables/scheduler.js"
 import ImageView from "/src/vue/components/widgets/ImageView.vue"
 import ProgressBar from "/src/vue/components/widgets/ProgressBar.vue"
@@ -64,7 +61,7 @@ const Steps = {
 const emit = defineEmits(['ready', 'completed'])
 
 /** @type {{value: Boolean}} */
-const canScroll = inject("canScroll")
+const canScroll = inject<Ref<boolean>>("canScroll")
 
 const schedulerTag = "loader"
 const didLoadLogo = ref(false)

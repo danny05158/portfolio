@@ -22,7 +22,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {inject} from "vue"
 import IconView from "/src/vue/components/widgets/IconView.vue"
 import SolidDivider from "/src/vue/components/widgets/SolidDivider.vue"

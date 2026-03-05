@@ -45,8 +45,8 @@
     </div>
 </template>
 
-<script setup>
-import {computed, inject} from "vue"
+<script setup lang="ts">
+import {computed, inject, type Ref, type ComputedRef} from "vue"
 import Dropdown from 'bootstrap/js/src/dropdown'
 import {useUtils} from "/src/composables/utils.js"
 import {useConstants} from "/src/composables/constants.js"
@@ -67,14 +67,14 @@ const props = defineProps({
 const selectedLanguage = languageManagerStore.selectedLanguage
 
 /** @type {{value:String}} */
-const presentationMode = inject("presentationMode")
+const presentationMode = inject<Ref<string>>("presentationMode")
 
 
 /** @type {Function} */
-const setSpinnerEnabled = inject("setSpinnerEnabled")
+const setSpinnerEnabled = inject<(enabled: boolean, message?: string) => void>("setSpinnerEnabled")
 
 /** @type {{value: Boolean}} */
-const isMobileLayout = inject("isMobileLayout")
+const isMobileLayout = inject<ComputedRef<boolean>>("isMobileLayout")
 
 const settings = computed(() => {
     return dataManagerStore.settings

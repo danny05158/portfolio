@@ -7,7 +7,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import ArticleContactForm from "/src/vue/components/articles/contact/ArticleContactForm.vue"
 import ArticleContactOptions from "/src/vue/components/articles/contact/ArticleContactOptions.vue"
 import ArticlePortfolio from "/src/vue/components/articles/portfolio/ArticlePortfolio.vue"

@@ -30,12 +30,13 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {inject, onMounted, onUnmounted, ref, watch} from "vue"
 import {useScheduler} from "/src/composables/scheduler.js"
 import {useUtils} from "/src/composables/utils.js"
 import IconView from "/src/vue/components/widgets/IconView.vue"
 import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
+import type ArticleItem from "/src/models/ArticleItem"
 const languageManagerStore = useLanguageManagerStore()
 
 const scheduler = useScheduler()
@@ -55,7 +56,7 @@ const props = defineProps({
 const localize = languageManagerStore.localize
 
 /** @type {Function} */
-const showProjectModal = inject("showProjectModal")
+const showProjectModal = inject<(item: ArticleItem) => void>("showProjectModal")
 
 const transitionStatus = ref("hidden")
 const iconView = ref(null)
@@ -97,7 +98,7 @@ const _show = () => {
 }
 
 const _onClick = () => {
-    showProjectModal(props.item)
+    showProjectModal(props.item as unknown as ArticleItem)
 }
 </script>
 

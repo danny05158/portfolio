@@ -9,8 +9,8 @@
     </div>
 </template>
 
-<script setup>
-import {computed, inject, onMounted} from "vue"
+<script setup lang="ts">
+import {computed, inject, onMounted, type Ref} from "vue"
 import Section from "/src/vue/components/sections/Section.vue"
 import NavigationWrapper from "/src/vue/components/navigation/NavigationWrapper.vue"
 import {useUtils} from "/src/composables/utils.js"
@@ -20,10 +20,10 @@ const dataManagerStore = useDataManagerStore()
 const utils = useUtils()
 
 /** @type {{value: String}} */
-const presentationMode = inject("presentationMode")
+const presentationMode = inject<Ref<string>>("presentationMode")
 
 /** @type {{value: Section}} */
-const currentSection = inject("currentSection")
+const currentSection = inject<Ref<{ id: string } | null>>("currentSection")
 
 const sections = computed(() => {
     return dataManagerStore.sections

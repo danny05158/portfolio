@@ -3,7 +3,7 @@
        v-html="localize(item.locales, 'description')"/>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {inject} from "vue"
 import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
 const languageManagerStore = useLanguageManagerStore()

@@ -4,7 +4,7 @@
          :options="chartOptions"/>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { Pie } from 'vue-chartjs'
 import { Chart as ChartJS, ArcElement, Title, Tooltip } from 'chart.js'
 import {computed, inject, onBeforeMount} from "vue"
@@ -36,7 +36,7 @@ const chartOptions = computed(() => {
         plugins: {
             tooltip: {
                 callbacks: {
-                    label: (tooltipItem, data) => {
+                    label: (tooltipItem) => {
                         return " " + Math.round(tooltipItem.parsed) + "% "
                     }
                 }

@@ -25,14 +25,15 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import {type PropType} from "vue"
 import IconView from "/src/vue/components/widgets/IconView.vue"
 import {useUtils} from "/src/composables/utils.js"
 
 const utils = useUtils()
 
 const props = defineProps({
-    items:Array
+    items: Array as PropType<any[]>
 })
 </script>
 
