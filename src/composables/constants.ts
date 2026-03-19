@@ -1,7 +1,3 @@
-/**
- * Created by Ryan Balieiro on 08.23.2023
- * Hub for defining app constants.
- */
 export function useConstants() {
     const BASE_URL: string = import.meta.env.BASE_URL
 

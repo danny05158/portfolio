@@ -1,7 +1,3 @@
-/**
- * Created by Ryan Balieiro on 03.29.2025
- * API integration with EmailJS for sending e-mails.
- */
 import emailjs from "@emailjs/browser"
 import {useUtils} from "/src/composables/utils"
 

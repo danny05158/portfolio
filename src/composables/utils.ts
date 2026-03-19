@@ -1,7 +1,3 @@
-/**
- * Created by Ryan Balieiro on 08.26.2023
- * This composable will implement helper functions that can be used by multiple components within the architecture.
- */
 import {useConstants} from "/src/composables/constants"
 
 const constants = useConstants()
