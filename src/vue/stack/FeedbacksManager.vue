@@ -27,7 +27,7 @@ const preloaderEnabled = computed(() => {
 })
 
 onMounted(() => {
-    didMountPreloader.value = !settings.value?.preloaderEnabled
+ didMountPreloader.value = !settings.value?.preloaderEnabled
 })
 
 const didMountPreloader = ref(false)
@@ -37,10 +37,6 @@ const loaderSmoothTransitionEnabled = ref(false)
 const spinnerActive = ref(false)
 const spinnerMessage = ref("")
 
-/**
- * @param {Boolean} enabled
- * @param {String} [message=""]
- */
 const setSpinnerEnabled = (enabled, message) => {
     spinnerActive.value = enabled
     spinnerMessage.value = message || ""

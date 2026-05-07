@@ -30,11 +30,6 @@ const defaultLanguage = computed(() => {
     return supportedLanguages.find(language => language.isDefault)
 })
 
-/**
- * @param {Locales} locales
- * @param {String} key
- * @param {Boolean} [returnNullIfNotFound=false]
- */
 const localize = (locales, key, returnNullIfNotFound?) => {
     if(!locales)
         return ''
@@ -48,17 +43,10 @@ const localize = (locales, key, returnNullIfNotFound?) => {
         translation
 }
 
-/**
- * @param {String} key
- */
 const localizeFromStrings = (key) => {
     return localize(strings.value, key)
 }
 
-/**
- * @param {Date|String} dateOrString
- * @return {string}
- */
 const localizeDate = (dateOrString) => {
     if(!dateOrString)
         return 'date.null'
