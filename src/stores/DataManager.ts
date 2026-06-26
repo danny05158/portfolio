@@ -11,14 +11,27 @@ export const useDataManagerStore = defineStore("dataManager", () => {
   const categories = ref<Category[] | null>(null);
   const profile = ref<Profile | null>(null);
   const sections = ref<Section[] | null>(null);
-  const settings = ref<Settings | null>(null);
-  const strings = ref<Locales | null>(null);
   const didLoadAllJsonFiles = ref(false);
   const languageId = ref<string | null>(null);
 
+  const strings = ref<Locales | null>()
+  
+  const settings = ref<Settings | null>({
+    "preloaderEnabled": false,
+    "navToggleEnabled": true,
+
+    "supportedLanguages": [
+        {
+            "name": "English",
+            "id": "en",
+            "flagUrl": "images/flags/en-us.png",
+            "default": true
+        }
+    ]
+})
+
+
   const loadData = async (): Promise<void> => {
-    const jSettings = await loadJson("/settings.json");
-    settings.value = new Settings(jSettings);
 
     const jStrings = await loadJson("/strings.json");
     strings.value = new Locales(jStrings);
