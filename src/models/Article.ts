@@ -40,7 +40,7 @@ export default class Article {
     }
 
     get items(): ArticleItem[] {
-        let itemsCopy = [...this._items]
+        const itemsCopy = [...this._items]
         const sortingKey = this.getSetting("order_items_by", "id") as keyof ArticleItem
         const sortingType = this.getSetting("order_items_sort", Article.ItemSortingTypes.ASCENDING)
 
