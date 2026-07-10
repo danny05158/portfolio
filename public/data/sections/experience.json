@@ -10,26 +10,18 @@
             },
             "items": [
                 {
-                    "id": 1,
+                    "id": 3,
                     "dateStart": {"year": 2022, "month": 1},
                     "dateEnd": {"year": 2025, "month": 10},
-                    "img": "images/places/logo-ux-studio.png",
-                    "fallbackFaIcon": null,
-                    "fallbackFaIconColor": null,
+                    "img": null,
+                    "fallbackFaIcon": "fa-solid fa-building",
+                    "fallbackFaIconColor": "black",
 
                     "locales": {
                         "en": {
                             "title": "Software Engineer II",
                             "description": "Spearheaded the development of high-impact educational products using Vue 3 and TypeScript. <br> Collaborated with Product, UI/UX and backend teams in an agile environment to facilitate feature development and deployment. <br><br> <strong>Key Achievements:</strong> Engineered a reporting platform to enable teachers to track student progress. <br>Built and incorporated a reusable UI component library. Ensuring brand consistency and accelerating future feature development.",
-                            "list": {
-                                "title": "Key Responsibilities",
-                                "items": [
-                                    "Conducted <strong>user research</strong> to gather insights and inform design decisions.",
-                                    "Created wireframes, prototypes, and high-fidelity designs using <strong>Figma.</strong>",
-                                    "Collaborated with developers to ensure <strong>design feasibility</strong> and implementation.",
-                                    "Conducted <strong>usability testing</strong> to validate designs and gather feedback."
-                                ]
-                            },
+                            "list": {},
                             "province": "Remote",
                             "country": "US",
                             "institution": "ExploreLearning",
@@ -38,12 +30,12 @@
                     }
                 },
                 {
-                    "id": 1,
+                    "id": 2,
                     "dateStart": {"year": 2020, "month": 6},
                     "dateEnd": {"year": 2021, "month": 5},
-                    "img": "images/places/logo-ux-studio.png",
-                    "fallbackFaIcon": null,
-                    "fallbackFaIconColor": null,
+                    "img": null,
+                    "fallbackFaIcon": "fa-solid fa-building",
+                    "fallbackFaIconColor": "black",
 
                     "locales": {
                         "en": {
@@ -52,7 +44,8 @@
                             "province": "Remote",
                             "country": "US",
                             "institution": "Sincro, a DealerOn company",
-                            "tags": []
+                            "tags": [],
+                            "list": {}
                         }
                     }
                 },
@@ -60,9 +53,9 @@
                     "id": 1,
                     "dateStart": {"year": 2019, "month": 3},
                     "dateEnd": {"year": 2020, "month": 6},
-                    "img": "images/places/logo-ux-studio.png",
-                    "fallbackFaIcon": "",
-                    "fallbackFaIconColor": null,
+                    "img": null,
+                    "fallbackFaIcon": "fa-solid fa-building",
+                    "fallbackFaIconColor": "black",
 
                     "locales": {
                         "en": {
@@ -71,7 +64,8 @@
                             "province": "Chicago, IL",
                             "country": "US",
                             "institution": "CDK Global",
-                            "tags": []
+                            "tags": [],
+                            "list": {}
                         }
                     }
                 }

@@ -1,7 +1,7 @@
 <template>
-        <Analytics/>
+        <!-- <Analytics/> -->
             <WindowObserver
-             v-if="settings">
+             v-if="filesLoaded">
                 <FeedbacksManager>
                         <LocationManager>
                             <ModalManager>
@@ -24,8 +24,8 @@ import { Analytics } from "@vercel/analytics/vue"
 import { useDataManagerStore } from "../../stores/DataManager"
 const dataManagerStore = useDataManagerStore()
 
-const settings = computed(() => {
-    return dataManagerStore.settings
+const filesLoaded = computed(() => {
+    return dataManagerStore.didLoadAllJsonFiles
 })
 
 dataManagerStore.loadData()
