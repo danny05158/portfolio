@@ -5,7 +5,7 @@ import Category from "/src/models/Category";
 import Locales from "/src/models/Locales";
 import Profile from "/src/models/Profile";
 import Section from "/src/models/Section";
-import Settings from "/src/models/Settings";
+// import Settings from "/src/models/Settings";
 
 export const useDataManagerStore = defineStore("dataManager", () => {
   const categories = ref<Category[] | null>(null);
@@ -16,7 +16,21 @@ export const useDataManagerStore = defineStore("dataManager", () => {
 
   const strings = ref<Locales | null>()
   
-  const settings = ref<Settings | null>({
+  // const settings = ref<Settings | null>({
+  //   "preloaderEnabled": false,
+  //   "navToggleEnabled": true,
+
+  //   "supportedLanguages": [
+  //       {
+  //           "name": "English",
+  //           "id": "en",
+  //           "flagUrl": "images/flags/en-us.png",
+  //           "default": true
+  //       }
+  //     ]
+  // })
+
+  const settings = {
     "preloaderEnabled": false,
     "navToggleEnabled": true,
 
@@ -25,10 +39,10 @@ export const useDataManagerStore = defineStore("dataManager", () => {
             "name": "English",
             "id": "en",
             "flagUrl": "images/flags/en-us.png",
-            "default": true
+            "isDefault": true
         }
     ]
-})
+}
 
 
   const loadData = async (): Promise<void> => {
