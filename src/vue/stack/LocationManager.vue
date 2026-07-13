@@ -67,11 +67,17 @@ const scrollToTopOfCurrentSection = () => {
 }
 
 const _onRouteChanged = () => {
+
+    console.log("route changed", route.path, dataManagerStore.didLoadAllJsonFiles);
+    
     if(!dataManagerStore.didLoadAllJsonFiles)
         return
 
     const sectionId = route.path.replace('/', '')
     const targetSection = dataManagerStore.sections.find((section) => section.urlHashId === sectionId)
+    
+    console.log("targetSection", targetSection)
+    
     if(!targetSection) {
         navigateToSection(dataManagerStore.sections[0])
         return
