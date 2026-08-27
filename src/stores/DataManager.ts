@@ -16,20 +16,6 @@ export const useDataManagerStore = defineStore("dataManager", () => {
 
   const strings = ref<Locales | null>()
   
-  // const settings = ref<Settings | null>({
-  //   "preloaderEnabled": false,
-  //   "navToggleEnabled": true,
-
-  //   "supportedLanguages": [
-  //       {
-  //           "name": "English",
-  //           "id": "en",
-  //           "flagUrl": "images/flags/en-us.png",
-  //           "default": true
-  //       }
-  //     ]
-  // })
-
   const settings = {
     "preloaderEnabled": false,
     "navToggleEnabled": true,

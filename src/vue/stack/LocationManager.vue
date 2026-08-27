@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import {inject, onMounted, provide, ref, watch, type Ref, type ComputedRef} from "vue"
+import {inject, onMounted, provide, ref, watch, type ComputedRef} from "vue"
 import {useRoute, useRouter} from "vue-router"
 import {useScheduler} from "/src/composables/scheduler.js"
 import {useConstants} from "/src/composables/constants.js"
