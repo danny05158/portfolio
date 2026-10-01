@@ -19,8 +19,6 @@ const faIcon = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 button.nav-toggle-button {
     background-color: $nav-background;
     color: $nav-contrast-90;

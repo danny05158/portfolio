@@ -34,8 +34,6 @@ const style = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.progress {
     height: 5px;
     border-radius: $default-border-radius;

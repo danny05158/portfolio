@@ -72,5 +72,4 @@ provide("localizeDate", localizeDate)
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
 </style>

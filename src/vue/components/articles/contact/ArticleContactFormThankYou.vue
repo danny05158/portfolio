@@ -45,8 +45,6 @@ const _onAnotherMessageButton = () => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.contact-form-thank-you {
     display: flex;
     align-items: center;

@@ -65,8 +65,6 @@ const _onLinkClicked = (section, e) => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.nav-sidebar-links-wrapper {
     width: 100%;
     overflow-y: auto;

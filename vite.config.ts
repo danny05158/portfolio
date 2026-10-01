@@ -23,6 +23,7 @@ export default defineConfig({
         preprocessorOptions: {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             scss: {
+                additionalData: `@import "/src/scss/_theming.scss";\n`,
                 silenceDeprecations: ["mixed-decls", "color-functions", "global-builtin", "import"],
             } as any,
         },

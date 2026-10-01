@@ -38,8 +38,6 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.options-list-item {
     --icon-size: 62px;
     @include media-breakpoint-down(xxl) {--icon-size: 58px;}

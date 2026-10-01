@@ -24,8 +24,6 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 h3.article-title {
     font-weight: bold;
     text-transform: uppercase;

@@ -66,8 +66,6 @@ const socialLinks = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 h1.title {
     font-weight: bold;
     letter-spacing: .5px;

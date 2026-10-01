@@ -93,8 +93,6 @@ const blocks = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.project-modal-content {
     width: 100%;
     @include media-breakpoint-down($navigation-sidebar-breakpoint) {

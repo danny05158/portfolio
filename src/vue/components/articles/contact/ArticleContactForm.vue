@@ -127,8 +127,6 @@ const _submit = async () => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 #contact-form {
     display: flex;
     width: 100%;

@@ -37,8 +37,6 @@ const _onOptionSelected = (option) => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 nav.nav-mobile-section-picker {
     width: 100%;
     height: $nav-section-picker-height;

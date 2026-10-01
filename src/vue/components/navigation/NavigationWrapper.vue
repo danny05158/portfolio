@@ -88,8 +88,6 @@ const _onNavToggle = (value) => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.navigation-wrapper {
     display: flex;
     width: 100%;

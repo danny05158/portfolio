@@ -124,8 +124,6 @@ const infoListItems = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.timeline-item-content {
     flex-grow: 1;
     margin-left: 20px;

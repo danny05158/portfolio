@@ -68,8 +68,6 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.icon-view {
     display: flex;
     align-items: center;

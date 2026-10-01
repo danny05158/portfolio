@@ -42,8 +42,6 @@ const localize = languageManagerStore.localize
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 li.timeline-item {
     display: flex;
     min-height: calc($article-timeline-image-size);

@@ -70,8 +70,6 @@ const links = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 li.thread-item {
     display: flex;
 

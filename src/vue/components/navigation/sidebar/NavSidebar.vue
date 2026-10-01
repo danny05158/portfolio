@@ -81,8 +81,6 @@ const _onToggle = () => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 nav.nav-sidebar {
     position: fixed;
     display: flex;

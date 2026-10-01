@@ -103,8 +103,6 @@ const _onClick = () => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.portfolio-item {
     display: flex;
     align-items: start;

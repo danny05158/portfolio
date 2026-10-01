@@ -34,8 +34,6 @@ const _getLabel = (link) => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.links {
     display: flex;
     flex-direction: column;

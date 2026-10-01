@@ -101,8 +101,6 @@ const _onCategorySelected = (categoryId) => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 article.article-portfolio {
     display: flex;
     flex-direction: column;

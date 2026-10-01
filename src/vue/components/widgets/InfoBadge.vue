@@ -14,8 +14,6 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.info-badge {
     display: inline-flex;
     align-items: center;

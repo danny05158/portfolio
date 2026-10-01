@@ -48,8 +48,6 @@ const description = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.resume-section-header {
     @include generate-dynamic-styles-with-hash((
         xxxl: (margin-bottom:2rem),
