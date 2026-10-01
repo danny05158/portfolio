@@ -125,8 +125,6 @@ const links = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.skills-item {
     display: flex;
     @include media-breakpoint-down(sm) {

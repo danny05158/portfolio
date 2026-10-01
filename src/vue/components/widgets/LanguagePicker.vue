@@ -113,8 +113,6 @@ const _onLanguageSelected = (language) => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 button.dropdown-toggle {
     border-width: 0;
     background-color: transparent;

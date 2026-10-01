@@ -13,8 +13,6 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 img.resume-spinner-widget {
     @include generate-dynamic-styles-with-hash((
         xxxl:   (max-width: 200px,  max-height:200px),

@@ -17,8 +17,6 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 button.btn-xl {
     @include generate-dynamic-styles-with-hash((
         xxxl: (padding: 1.125rem 2.3rem, font-size: 1.05rem),

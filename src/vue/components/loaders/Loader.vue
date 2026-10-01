@@ -219,8 +219,6 @@ const _executeLeavingStep = () => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.resume-loader {
     position: fixed;
     z-index: $z-index-loader;

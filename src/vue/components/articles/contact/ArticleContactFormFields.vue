@@ -91,8 +91,6 @@ const _onInputChanged = (e) => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 $spacing: clamp(5px, 2vw , 15px);
 $submit-button-spacing: clamp(5px, 1.5vw , 10px);
 

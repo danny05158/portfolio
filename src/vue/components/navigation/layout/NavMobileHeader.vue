@@ -34,8 +34,6 @@ const localize = languageManagerStore.localize
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 nav.nav-mobile-header {
     background-color: $nav-background;
     @include media-breakpoint-up($navigation-sidebar-breakpoint) {

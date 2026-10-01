@@ -16,8 +16,6 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 ul.inline-info-list {
     display: flex;
     list-style: none;

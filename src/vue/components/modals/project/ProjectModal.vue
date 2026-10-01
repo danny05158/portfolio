@@ -43,8 +43,6 @@ const _onClose = () => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.project-modal-content-wrapper {
     display: flex;
     width: 100%;

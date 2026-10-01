@@ -14,8 +14,6 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 button.fa-button {
     padding: 0;
     margin: 0;

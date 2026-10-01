@@ -74,8 +74,6 @@ const colClassWithChart = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.article-content-wrapper {
     display: flex;
     @include media-breakpoint-down(xl) {

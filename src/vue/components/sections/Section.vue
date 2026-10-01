@@ -51,8 +51,6 @@ const visible = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 section.resume-section {
     display: flex;
     min-height: 100vh;

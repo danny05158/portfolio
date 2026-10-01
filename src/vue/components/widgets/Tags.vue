@@ -13,8 +13,6 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 ul.tags {
     display: block;
     list-style: none;

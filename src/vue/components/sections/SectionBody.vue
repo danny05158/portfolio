@@ -49,8 +49,6 @@ const mappedArticles = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.section-body {
     width: 100%;
     display: flex;

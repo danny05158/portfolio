@@ -20,8 +20,6 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 #resume-activity-spinner {
     position: fixed;
     z-index: 99;

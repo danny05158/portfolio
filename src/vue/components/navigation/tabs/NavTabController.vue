@@ -83,8 +83,6 @@ const _onOptionSelected = (option) => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 nav.nav-mobile-tab-controller {
     position: fixed;
     width: 100%;

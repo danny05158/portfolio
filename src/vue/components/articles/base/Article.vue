@@ -44,8 +44,6 @@ const description = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 article.article {
     color: $text-default-color;
     overflow: hidden;

@@ -5,7 +5,6 @@ import Category from "/src/models/Category";
 import Locales from "/src/models/Locales";
 import Profile from "/src/models/Profile";
 import Section from "/src/models/Section";
-// import Settings from "/src/models/Settings";
 
 export const useDataManagerStore = defineStore("dataManager", () => {
   const categories = ref<Category[] | null>(null);

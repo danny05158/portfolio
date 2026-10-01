@@ -72,8 +72,6 @@ const _toDisplayFormat = (value) => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 .article-not-found-viewer {
     display: flex;
     flex-direction: column;

@@ -58,8 +58,6 @@ const _isSectionActive = (section) => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 #resume {
     display: flex;
     min-height: 100vh;

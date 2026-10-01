@@ -103,5 +103,4 @@ provide("shouldAddChromeBottomOffset", shouldAddChromeBottomOffset)
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
 </style>

@@ -38,8 +38,6 @@ const _onToggleButton = () => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.nav-profile-card {
     display: flex;
     width: 100%;

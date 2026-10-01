@@ -20,8 +20,6 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.nav-sidebar-footer {
     display: flex;
     flex-direction: column;

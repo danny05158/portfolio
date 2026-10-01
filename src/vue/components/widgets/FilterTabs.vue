@@ -37,8 +37,6 @@ const _selectItem = (category) => {
 </script>
 
 <style lang="scss" scoped>
-@import "/src/scss/_theming.scss";
-
 div.btn-group {
     display: inline-flex;
     width: 100%;
