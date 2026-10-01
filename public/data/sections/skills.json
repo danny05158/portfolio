@@ -72,7 +72,7 @@
                     "locales": {
                         "en": {
                             "title": "GIT",
-                            "description": "Use version control for as a collaborative development.",
+                            "description": "Use version control for collaborative development.",
                             "level": null
                         }
                     }
@@ -101,7 +101,7 @@
                     "percentage": null,
                     "locales": {
                         "en": {
-                            "title": "Claude Code/ GitHub Copilot",
+                            "title": "Claude Code / GitHub Copilot",
                             "description": "AI-assisted development to accelerate feature deliveries.",
                             "level": null
                         }
