@@ -19,7 +19,8 @@
                     }]"/>
                 </div>
 
-                <div class="thread-item-content-header-date-badge-wrapper">
+                <div v-if="item.dateStart"
+                     class="thread-item-content-header-date-badge-wrapper">
                     <InfoBadge  class="date-badge"
                                 variant="nav"
                                 fa-icon="fa-regular fa-calendar"
@@ -29,6 +30,11 @@
 
             <p class="text-3 text-light-7 p-0 m-0"
                v-html="localize(item.locales, 'description')"/>
+
+            <CodeBlock v-if="item.code && item.code.source"
+                       class="mt-2"
+                       :source="item.code.source"
+                       :language="item.code.language"/>
 
             <ArticleWidgetLinkList  v-if="links && links.length"
                                     class="mt-2 text-3"
@@ -41,6 +47,7 @@
 import {computed, inject} from "vue"
 import InfoBadge from "/src/vue/components/widgets/InfoBadge.vue"
 import InlineInfoList from "/src/vue/components/widgets/InlineInfoList.vue"
+import CodeBlock from "/src/vue/components/widgets/CodeBlock.vue"
 import ArticleWidgetLinkList from "/src/vue/components/articles/base/ArticleWidgetLinkList.vue"
 import { useLanguageManagerStore } from "../../../../stores/LanguageManager"
 const languageManagerStore = useLanguageManagerStore()
