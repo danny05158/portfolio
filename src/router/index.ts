@@ -6,6 +6,8 @@ const routes: RouteRecordRaw[] = [
   { path: '/about',     name: 'about',     component: App },
   { path: '/education', name: 'education', component: App },
   { path: '/skills',    name: 'skills',    component: App },
+  { path: '/experience', name: 'experience', component: App },
+  { path: '/leetcode',      name: 'leetcode',      component: App },
   { path: '/:pathMatch(.*)*', redirect: '/about' }
 ]
 
