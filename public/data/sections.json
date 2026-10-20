@@ -62,7 +62,7 @@
       }
     },
     {
-      "id": "notes",
+      "id": "leetcode",
       "categoryId": "more",
       "jsonPath": "/sections/notes.json",
       "faIcon": "fa-solid fa-note-sticky",
