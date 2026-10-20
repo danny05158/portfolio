@@ -7,6 +7,11 @@ interface DatePreset {
     string?: string
 }
 
+interface CodeSnippet {
+    language?: string
+    source: string | string[]
+}
+
 export default class ArticleItem {
     private _id: string
     private _img: string
@@ -18,6 +23,7 @@ export default class ArticleItem {
     private _locales: Locales
     private _links: unknown[]
     private _category: string
+    private _code: CodeSnippet | null
 
     constructor(data: Record<string, unknown>) {
         this._id = data.id as string
@@ -30,6 +36,7 @@ export default class ArticleItem {
         this._locales = new Locales((data.locales as Record<string, unknown>) || {})
         this._links = (data.links as unknown[]) || []
         this._category = data['category'] as string
+        this._code = (data['code'] as CodeSnippet) || null
     }
 
     get id(): string {
@@ -85,5 +92,9 @@ export default class ArticleItem {
 
     get categoryId(): string {
         return this._category
+    }
+
+    get code(): CodeSnippet | null {
+        return this._code
     }
 }

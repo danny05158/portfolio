@@ -5,8 +5,8 @@ import tseslint from 'typescript-eslint'
 export default tseslint.config(
   { ignores: ['node_modules', 'dist'] },
   js.configs.recommended,
-  ...pluginVue.configs['flat/recommended'],
   ...tseslint.configs.recommended,
+  ...pluginVue.configs['flat/recommended'],
   {
     files: ['**/*.vue'],
     languageOptions: {

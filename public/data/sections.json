@@ -60,6 +60,21 @@
           "nav_label": "Experience"
         }
       }
+    },
+    {
+      "id": "notes",
+      "categoryId": "more",
+      "jsonPath": "/sections/notes.json",
+      "faIcon": "fa-solid fa-note-sticky",
+      "type": "column",
+      "locales": {
+        "en": {
+          "title": " *LeetCode* Solutions",
+          "title_short": null,
+          "description": null,
+          "nav_label": "LeetCode"
+        }
+      }
     }
   ]
 }

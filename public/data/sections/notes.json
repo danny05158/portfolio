@@ -1,0 +1,66 @@
+{
+    "articles": [
+        {
+            "id": 1,
+            "component": "ArticleThread",
+            "locales": {},
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "desc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "dateStart": null,
+                    "fallbackFaIcon": " ",
+                    "fallbackFaIconColor": null,
+                    "locales": {
+                        "en": {
+                            "title": "Given an integer array arr and a mapping function fn, return a new array with a transformation applied to each element. The returned array should be created such that returnedArray[i] = fn(arr[i], i). Please solve it without the built-in Array.map method.",
+                            "description": " ",
+                            "institution": null
+                        }
+                    },
+                    "code": {
+                        "language": "javascript",
+                        "source": [                 
+                            "var map = function(arr, fn) {",
+                                "  return arr.reduce((acc, ele, i) => {",
+                                    "  acc.push(fn(ele, i))",
+                                    "  return acc",   
+                                "}, [])"
+                            ]
+                    },
+                    "links": []
+                },
+                {
+                    "id": 2,
+                    "dateStart": null,
+                    "fallbackFaIcon": " ",
+                    "fallbackFaIconColor": null,
+                    "locales": {
+                        "en": {
+                            "title": "Given an integer array arr and a filtering function fn, return a filtered array filteredArr. The fn function takes one or two arguments:arr[i] - number from the arri - index of arr[i] filteredArr should only contain the elements from the arr for which the expression fn(arr[i], i) evaluates to a truthy value. A truthy value is a value where Boolean(value) returns true. Please solve it without the built-in Array.filter method.",
+                            "description": " ",
+                            "institution": null
+                        }
+                    },
+                    "code": {
+                        "language": "javascript",
+                        "source": [                 
+                                "var filter = function(arr, fn) {",
+                                    "  const res = []",
+                                    "  for(let count = 0; count < arr.length; count++){",
+                                        "   if(fn(arr[count], count))",
+                                            "   res.push(arr[count])",
+                                    "  }",
+                                    "  return res",
+                                "  };"
+                            ]
+                    },
+                    "links": []
+                }
+            ]
+        }
+    ]
+}
